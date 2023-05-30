@@ -1,26 +1,26 @@
-const { model, Schema } = require("mongoose")
+const { model, Schema } = require("mongoose");
 
 const tripSchema = new Schema({
-    startDate: {
-        type: Date,
-        default: Date.now,
-        required: true,
-    },
-    endDate: {
-        type: Date,
-        required: true,
-    },
-    idVilla: {
-        type: Schema.Types.ObjectId,
-        required: true,
-    },
-    idUser: {
-        type: Schema.Types.ObjectId,
-        // required: true,
-        // ref: "User",
-    },
-})
+  startDate: {
+    type: Date,
+    default: Date.now,
+  },
+  endDate: {
+    type: Date,
+    required: true,
+  },
+  idVilla: {
+    type: Schema.Types.ObjectId,
+    required: true,
+    ref: "Villa",
+  },
+  idUser: {
+    type: Schema.Types.ObjectId,
+    required: true,
+    ref: "User",
+  },
+});
 
-const Trip = model("Trip", tripSchema)
+const Trip = model("Trip", tripSchema);
 
-module.exports = Trip
+module.exports = Trip;
