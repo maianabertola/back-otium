@@ -65,6 +65,17 @@ router.post("/", async (req, res, next) => {
     }
 })
 
+router.delete("/:id", (req, res, next) => {
+    try {
+        const {id} = req.params;
+        const deleteVilla = 
+
+    } catch(e) {
+        next(e)
+        console.log("there is an error")
+    }
+})
+
 
 // un post sur le user 
 //patch de date sur la villa 

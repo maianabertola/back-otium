@@ -3,76 +3,77 @@ const { model, Schema } = require("mongoose");
 const villaSchema = new Schema({
   name: {
     type: String,
-    require: true,
+    required: true,
   },
   country: {
     type: String,
-    require: true,
+    required: true,
   },
   region: {
     type: String,
-    require: true,
+    required: true,
   },
   numberPeople: {
     type: Number,
     min: 1,
     max: 15,
-    require: true,
+    required: true,
   },
-  squareMetter: {
+  squareMeter: {
     type: Number,
-    require: true,
+    required: true,
   },
   bedrooms: {
     type: Number,
-    require: true,
+    required: true,
   },
   bathrooms: {
     type: Number,
-    require: true,
+    required: true,
   },
   views: {
     type: String,
     enum: ["mountain", "sea"],
-    require: true,
+    required: true,
   },
   pricePerWeek: {
     type: Number,
-    require: true,
+    required: true,
   },
   galeryPhoto: {
     type: [String],
-    require: true,
+    required: true,
   },
   slogan: {
     type: String,
-    require: true,
+    required: true,
   },
   descriptionText: {
     type: String,
-    require: true,
+    required: true,
   },
   idylicStatus: {
-    type: String,
+    type: [String],
     enum: ["Family Moment", "Friends Trip", "Life Party"],
-    require: true,
+    minItems: 1,
+    maxItems: 3,
+    required: true,
   },
   petFriendly: {
     type: Boolean,
-    require: true,
+    required: true,
   },
   distinctiveFeatures: [String],
   services: {
     type: [Schema.Types.ObjectId],
-    require: true,
   },
   descriptionPieces: {
     type: [String],
-    require: true,
+    required: true,
   },
   address: {
     type: String,
-    require: true,
+    required: true,
   },
 });
 

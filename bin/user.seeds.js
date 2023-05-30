@@ -14,7 +14,7 @@ const users = [
     postalCode: "94170",
     },
     {
-    name: romain,
+    name: "romain",
     birthDate: "29/07/1995",
     email: "romain@mail.com",
     phoneNumber: "0610111213",
@@ -23,7 +23,7 @@ const users = [
     postalCode: "75010",
     },
     {
-    name: antoine,
+    name: "antoine",
     birthDate: "29/01/1991",
     email: "antoine@mail.com",
     phoneNumber: "0727389406",

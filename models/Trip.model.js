@@ -3,19 +3,19 @@ const { model, Schema } = require("mongoose")
 const tripSchema = new Schema({
     startDate: {
         type: String,
-        require: true,
+        required: true,
     },
     endDate: {
         type: String,
-        require: true,
+        required: true,
     },
     idVilla: {
         type: String,
-        require: true,
+        required: true,
     },
     idUser: {
         type: String,
-        require: true,
+        required: true,
     },
 })
 

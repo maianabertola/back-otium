@@ -8,11 +8,8 @@ const villas = [
     name: "Fabine",
     country: "Italy",
     region: "Toscana",
-    numberPeople: {
-      min: 2,
-      max: 10,
-    },
-    squareMetter: 230,
+    numberPeople: 7,
+    squareMeter: 230,
     bedrooms: 5,
     bathrooms: 6,
     views: "mountain",
@@ -27,10 +24,10 @@ const villas = [
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius malesuada nibh eget congue. Sed porta nibh nec dolor iaculis, eu maximus nisl egestas",
     descriptionText:
       " Nullam eu ante sit amet nisl euismod lobortis ut a metus. Etiam quis velit quis nulla tristique eleifend. Phasellus luctus volutpat tellus, ac convallis dui luctus in. Curabitur commodo mi a accumsan condimentum. Pellentesque vitae arcu arcu. Praesent lacus leo, vehicula nec commodo semper, convallis eget diam.",
-    idylicStatus: "Family Moment", "Life Party",
+    idylicStatus: ["Family Moment", "Friends Trip"],
     petFriendly: true,
     distinctiveFeatures: ["Lorem", "Lorem", "Lorem"],
-    services: [Schema.Types.ObjectId],
+    services: [],
     descriptionPieces: [
       "Room 1 : bed, tv, jacuzzi",
       "Room 2 : bed, tv, jacuzzi",
@@ -42,11 +39,8 @@ const villas = [
     name: "Damdam",
     country: "Spain",
     region: "Andalousie",
-    numberPeople: {
-      min: 5,
-      max: 9,
-    },
-    squareMetter: 450,
+    numberPeople: 3,
+    squareMeter: 450,
     bedrooms: 10,
     bathrooms: 6,
     views: "sea",
@@ -61,10 +55,10 @@ const villas = [
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius malesuada nibh eget congue. Sed porta nibh nec dolor iaculis, eu maximus nisl egestas",
     descriptionText:
       " Nullam eu ante sit amet nisl euismod lobortis ut a metus. Etiam quis velit quis nulla tristique eleifend. Phasellus luctus volutpat tellus, ac convallis dui luctus in. Curabitur commodo mi a accumsan condimentum. Pellentesque vitae arcu arcu. Praesent lacus leo, vehicula nec commodo semper, convallis eget diam.",
-    idylicStatus: "famillyMoment",
+    idylicStatus: ["Family Moment"],
     petFriendly: true,
     distinctiveFeatures: ["Lorem", "Lorem", "Lorem"],
-    services: [Schema.Types.ObjectId],
+    services: ["6475bca7d026b3e05e3b5929", "6475bca7d026b3e05e3b5928"],
     descriptionPieces: [
       "Room 1 : bed, tv, jacuzzi",
       "Room 2 : bed, tv, jacuzzi",
@@ -76,13 +70,13 @@ const villas = [
 
 async function seed() {
   try {
-    await Villa.deleteMany();
-    await Villa.create(villas);
-    console.log("create all villas", villas);
-    process.exit();
-  } catch (e) {
-    next(e);
-    console.log("there is an error");
+    await Villa.deleteMany()
+    await Villa.create(villas)
+    console.log("create all villas", villas)
+    process.exit()
+  } catch(e) {
+    
+    console.log("there is an error")
   }
 }
 

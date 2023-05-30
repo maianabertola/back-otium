@@ -3,44 +3,44 @@ const { model, Schema } = require("mongoose")
 const questionnaireSchema = new Schema({
     name: {
         type: String,
-        require: true,
-        require: true,
+        required: true,
+        required: true,
     },
     userId: {
         type: String,
     },
     startDate: {
         type: String,
-        require: true,
+        required: true,
     },
     endDate: {
         type: String,
-        require: true,
+        required: true,
     },
     country: {
         type: String,
-        require: true,
+        required: true,
     },
     View: {
         type: String,
         enum: ["mountain", "sea"],
-        require: true,
+        required: true,
     },
     idylicStatus: {
         type: String,
-        require: true,
+        required: true,
     },
     numberPeoples: {
         type: Number,
-        require: true,
+        required: true,
     },
     petFriendly: {
         type: Boolean,
-        require: true,
+        required: true,
     },
     numberBedrooms: {
         type: Number,
-        require: true,
+        required: true,
     },
     services: {
         type: [Schema.Types.ObjectId],
