@@ -1,9 +1,9 @@
 const router = require("express").Router();
-const ServiceDetail = require("../models/ServiceDetail.models");
+const Service = require("../models/ServiceDetail.models");
 
 router.get("/", async (req, res, next) => {
   try {
-    const allServices = await ServiceDetail.find();
+    const allServices = await Service.find();
     res.status(201).json({
       message: "this is all the services created",
       ServiceDetail: allServices,
@@ -14,22 +14,18 @@ router.get("/", async (req, res, next) => {
   }
 });
 
-router.post("/", async (req, res, next) => {
-    try {
-        const { title,
-            slogan,
-            description } = req.body
-        const newService = await ServiceDetail.create({
-                title,
-                slogan,
-                description,
-        })
-        res.status(201).json({newService,
-        message: "new service created"})
-    } catch(e) {
-        next(e)
-        console.log("there is a post error")
-    }
+router.get("/:id", async (req, res, next) => {
+  try {
+    const { id } = req.params
+    const oneService = await Service.findById(id)
+    res.status(201).json({
+      message: "this is one service",
+      Service: oneService,
+    })
+  } catch(e) {
+    next(e)
+    console.log("there is an error")
+  }
 })
 
 module.exports = router

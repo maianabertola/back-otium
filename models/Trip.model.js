@@ -2,20 +2,22 @@ const { model, Schema } = require("mongoose")
 
 const tripSchema = new Schema({
     startDate: {
-        type: String,
+        type: Date,
+        default: Date.now,
         required: true,
     },
     endDate: {
-        type: String,
+        type: Date,
         required: true,
     },
     idVilla: {
-        type: String,
+        type: Schema.Types.ObjectId,
         required: true,
     },
     idUser: {
-        type: String,
-        required: true,
+        type: Schema.Types.ObjectId,
+        // required: true,
+        // ref: "User",
     },
 })
 
