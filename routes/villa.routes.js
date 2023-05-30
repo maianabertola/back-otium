@@ -31,7 +31,7 @@ router.get("/:id", async (req, res, next) => {
 router.post("/:id", async (req, res, next) => {
   try {
     const { id } = req.params
-    const { startDate, endDate, idVilla, idUser } = req;
+    const { startDate, endDate, idVilla, idUser } = req.body;
     const oneTrip = await Trip.create({
       startDate,
       endDate,
