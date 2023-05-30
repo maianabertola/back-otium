@@ -40,6 +40,15 @@ const villaSchema = new Schema({
     type: Number,
     required: true,
   },
+  startDate: {
+    type: Date,
+    default: Date.now,
+    required: true,
+  },
+  endDate: {
+    type: Date,
+    required: true,
+  },
   galeryPhoto: {
     type: [String],
     required: true,
