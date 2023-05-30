@@ -26,9 +26,6 @@ const userSchema = new Schema({
     postalCode: {
         type: String,
     },
-    id: {
-        type: String,
-    },
 });
 
 const User = model("User", userSchema)
