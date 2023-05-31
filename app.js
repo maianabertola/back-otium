@@ -21,15 +21,20 @@ const villa = require("./routes/villa.routes");
 const authentification = require("./routes/auth.routes")
 const favorite = require("./routes/favoritesPage.routes")
 const questionnaire = require("./routes/questionnairePage.routes")
-const booking = require("./routes/bookingPage.routes")
+const booking = require("./routes/bookingPage.routes");
+const isAuthenticated = require("./middleware/middlewares");
+const account = require("./routes/account.routes")
 
 app.use("/api", indexRoutes);
+
 app.use("/villa", villa);
-app.use("/favorite", favorite);
-app.use("/", authentification)
 app.use("/service", services);
-app.use("/booking", booking);
+app.use("/", authentification)
+app.use(isAuthenticated);
+app.use("/account", account)
+app.use("/favorite", favorite);
 app.use("/questionnaire", questionnaire);
+app.use("/booking", booking);
 
 // ❗ To handle errors. Routes that don't exist or errors that you handle in specific routes
 require("./error-handling")(app);
