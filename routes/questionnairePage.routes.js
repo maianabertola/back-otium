@@ -1,8 +1,7 @@
 const router = require("express").Router();
-//ajouter des models
 const Questionnaire = require("../models/Questionnaire.model");
 
-router.get("/questionnaire", async (req, res, next) => {
+router.get("/", async (req, res, next) => {
   try {
     const findAllQuestionnaire = await Questionnaire.find();
     res.status(201).json({
@@ -15,30 +14,32 @@ router.get("/questionnaire", async (req, res, next) => {
   }
 });
 
-router.post("/questionnaire", async (req, res, next) => {
+router.post("/", async (req, res, next) => {
   try {
     const {
+      name,
       userId,
       startDate,
       endDate,
       country,
       View,
-      idylicStatus,
-      numberPeoples,
+      idyllicStatus,
+      numberOfPeople,
       petFriendly,
-      numberBedrooms,
+      numberOFBedroom,
       services,
     } = req.body;
     const newQuestionnaire = await Questionnaire.create({
+      name,
       userId,
       startDate,
       endDate,
       country,
       View,
-      idylicStatus,
-      numberPeoples,
+      idyllicStatus,
+      numberOfPeople,
       petFriendly,
-      numberBedrooms,
+      numberOFBedroom,
       services,
     });
 
@@ -51,7 +52,7 @@ router.post("/questionnaire", async (req, res, next) => {
   }
 });
 
-router.delete("/questionnaire/:id", async (req, res, next) => {
+router.delete("/:id", async (req, res, next) => {
   try {
     const { id } = req.params;
     const deleteQuestionnaire = await Questionnaire.findByIdAndDelete(id);

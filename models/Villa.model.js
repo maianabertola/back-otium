@@ -13,7 +13,7 @@ const villaSchema = new Schema({
     type: String,
     required: true,
   },
-  numberPeople: {
+  numberOfPeople: {
     type: Number,
     min: 1,
     max: 15,
@@ -31,7 +31,7 @@ const villaSchema = new Schema({
     type: Number,
     required: true,
   },
-  views: {
+  view: {
     type: String,
     enum: ["mountain", "sea"],
     required: true,
@@ -57,7 +57,7 @@ const villaSchema = new Schema({
     type: String,
     required: true,
   },
-  descriptionText: {
+  description: {
     type: String,
     required: true,
   },
@@ -73,11 +73,15 @@ const villaSchema = new Schema({
     required: true,
   },
   distinctiveFeatures: [String],
-  services: {
-    type: [Schema.Types.ObjectId],
-  },
-  descriptionPieces: {
-    type: [String],
+  services: [{
+    type: Schema.Types.ObjectId,
+    ref: "Service"
+  }],
+  roomsDescriptions: {
+    type: [{
+      room: String,
+      description: String
+    }],
     required: true,
   },
   address: {

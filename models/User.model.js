@@ -6,7 +6,7 @@ const userSchema = new Schema({
         required: true,
     },
     birthDate: {
-        type: String,
+        type: Date,
         required: true,
     },
     email: {
@@ -18,14 +18,15 @@ const userSchema = new Schema({
         required: true,
     },
     address: {
-        type: String,
+        street: String,
+        zipCode: String,
+        streetNumber: String,
+        country: String
     },
-    country: {
+    password: {
         type: String,
-    },
-    postalCode: {
-        type: String,
-    },
+        required: true,
+    }
 });
 
 const User = model("User", userSchema)

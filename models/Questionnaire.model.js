@@ -1,52 +1,58 @@
-const { model, Schema } = require("mongoose")
+const { model, Schema } = require("mongoose");
 
 const questionnaireSchema = new Schema({
-    name: {
-        type: String,
-        required: true,
-        required: true,
+  name: {
+    type: String,
+    required: true,
+  },
+  userId: {
+    type: Schema.Types.ObjectId,
+      ref: "User",
+  },
+  startDate: {
+    type: Date,
+    default: Date.now,
+  },
+  endDate: {
+    type: Date,
+    required: true,
+  },
+  country: {
+    type: String,
+    required: true,
+  },
+  view: {
+    type: String,
+    enum: ["mountain", "sea"],
+    required: true,
+  },
+  idyllicStatus: {
+    type: String,
+    enum: ["Family Moment", "Friends Trip", "Life Party"],
+    required: true,
+  },
+  numberOfPeople: {
+    type: Number,
+    required: true,
+    min: 1,
+  },
+  petFriendly: {
+    type: Boolean,
+    required: true,
+  },
+  numberOfBedroom: {
+    type: Number,
+    required: true,
+    min: 1,
+  },
+  services: [
+    {
+      type: Schema.Types.ObjectId,
+      ref: "Service",
     },
-    userId: {
-        type: String,
-    },
-    startDate: {
-        type: String,
-        required: true,
-    },
-    endDate: {
-        type: String,
-        required: true,
-    },
-    country: {
-        type: String,
-        required: true,
-    },
-    View: {
-        type: String,
-        enum: ["mountain", "sea"],
-        required: true,
-    },
-    idylicStatus: {
-        type: String,
-        required: true,
-    },
-    numberPeoples: {
-        type: Number,
-        required: true,
-    },
-    petFriendly: {
-        type: Boolean,
-        required: true,
-    },
-    numberBedrooms: {
-        type: Number,
-        required: true,
-    },
-    services: {
-        type: [Schema.Types.ObjectId],
-    },
-})
+  ],
+});
 
-const Questionnaire = model("Questionnaire", questionnaireSchema)
+const Questionnaire = model("Questionnaire", questionnaireSchema);
 
-module.exports = Questionnaire
+module.exports = Questionnaire;

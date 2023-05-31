@@ -1,12 +1,12 @@
 const router = require("express").Router();
-const Favori = require("../models/Favorite.model");
+const Favorite = require("../models/Favorite.model");
 
-router.get("/favori", async (req, res, next) => {
+router.get("/", async (req, res, next) => {
   try {
-    const findAllFavori = await Favori.find();
+    const findAllFavorite = await Favorite.find();
     res.status(201).json({
-      message: "u have all favori",
-      Favori: findAllFavori,
+      message: "you have all favorite",
+      Favorite: findAllFavorite,
     });
   } catch (e) {
     next(e);
@@ -14,29 +14,29 @@ router.get("/favori", async (req, res, next) => {
   }
 });
 
-router.post("/favori", async (req, res, next) => {
+router.post("/", async (req, res, next) => {
   try {
     const { idUser, idVilla } = req.body;
-    const newFavori = await User.create({
+    const newFavorite = await User.create({
       idUser,
       idVilla,
     });
     res.status(201).json({
-      message: "favori added",
-      Favori: newFavori,
+      message: "favorite added",
+      Favorite: newFavorite,
     });
   } catch (e) {
     next(e), console.log("there is a post error");
   }
 });
 
-router.delete("/favori/:id", async (req, res, next) => {
+router.delete("/:id", async (req, res, next) => {
   try {
     const { id } = req.params;
-    const deleteFavori = await Favori.findByIdAndDelete(id);
+    const deleteFavorite = await Favorite.findByIdAndDelete(id);
     res.status(201).json({
-      message: "the favori is deleted",
-      Favori: deleteFavori,
+      message: "the favorite is deleted",
+      Favori: deleteFavorite,
     });
   } catch (e) {
     next(e);

@@ -16,12 +16,20 @@ require("./config")(app);
 
 // 👇 Start handling routes here
 const indexRoutes = require("./routes/index.routes");
-const servicesPage = require("./routes/servicesPage.routes");
-const villaCollection = require("./routes/villa.routes");
-app.use("/api", indexRoutes);
+const services = require("./routes/servicesPage.routes");
+const villa = require("./routes/villa.routes");
+const authentification = require("./routes/auth.routes")
+const favorite = require("./routes/favoritesPage.routes")
+const questionnaire = require("./routes/questionnairePage.routes")
+const booking = require("./routes/bookingPage.routes")
 
-app.use("/service", servicesPage);
-app.use("/villa", villaCollection);
+app.use("/api", indexRoutes);
+app.use("/villa", villa);
+app.use("/favorite", favorite);
+app.use("/", authentification)
+app.use("/service", services);
+app.use("/booking", booking);
+app.use("/questionnaire", questionnaire);
 
 // ❗ To handle errors. Routes that don't exist or errors that you handle in specific routes
 require("./error-handling")(app);

@@ -1,86 +1,48 @@
-const router = require("express").Router()
-const Villa = require("../models/Villa.model")
-
+const router = require("express").Router();
+const Booking = require("../models/Booking.model");
 
 router.get("/", async (req, res, next) => {
-    try {
-        const findAllBook = await Villa.find()
-        res.status(201).json({
-            message: "there is all villa",
-            Villa: findAllBook,
-        })
-    } catch(e) {
-        next(e)
-        console.log("there is an error")
-    }
-})
+  try {
+    const findAllBook = await Booking.find();
+    res.status(201).json({
+      message: "there is all villa",
+      Booking: findAllBook,
+    });
+  } catch (e) {
+    next(e);
+    console.log("there is an error");
+  }
+});
 
 router.post("/", async (req, res, next) => {
-    try {
-        const { name,
-            country,
-            region,
-            numberPeoples,
-            squareMetter,
-            bedrooms,
-            bathrooms,
-            views,
-            price,
-            galeryPhoto,
-            slogan,
-            descriptionText,
-            idylicStatus,
-            petFriendly,
-            distinctiveIncluded,
-            descriptionPieces,
-            address,
-            id } = req.body
-        const newVilla = await Villa.create({
-            name,
-            country,
-            region,
-            numberPeoples,
-            squareMetter,
-            bedrooms,
-            bathrooms,
-            views,
-            price,
-            galeryPhoto,
-            slogan,
-            descriptionText,
-            idylicStatus,
-            petFriendly,
-            distinctiveIncluded,
-            descriptionPieces,
-            address,
-            id,
-        })
-        res.status(201).json({
-            message: "Villa created",
-            Villa: newVilla,
-        })
-    } catch(e) {
-        next(e)
-        console.log("there is an error")
-    }
-})
+  try {
+    const { numberOfPeople, pet, message, userId, villaId } = req.body;
+    const newBook = await Booking.create({
+      numberOfPeople,
+      pet,
+      message,
+      userId,
+      villaId,
+    });
+    res.status(201).json({
+      message: "Villa booked",
+      Booking: newBook,
+    });
+  } catch (e) {
+    next(e);
+    console.log("there is an error");
+  }
+});
 
-router.delete("/:id", (req, res, next) => {
-    try {
-        const {id} = req.params;
-        const deleteVilla = 
+router.delete("/:id", async (req, res, next) => {
+  try {
+    const { id } = req.params;
+    const deleteBook = await Booking.findByIdAndDelete(id);
+    res.status(201).json({ message: "book deleted", Booking: deleteBook });
+  } catch (e) {
+    next(e);
+    console.log("there is an error");
+  }
+});
 
-    } catch(e) {
-        next(e)
-        console.log("there is an error")
-    }
-})
-
-
-// un post sur le user 
-//patch de date sur la villa 
-
-//le nom de la villa -> name ou ID
-// date de réservation 
-
-module.exports = router
+module.exports = router;

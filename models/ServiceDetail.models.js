@@ -1,23 +1,17 @@
 const { model, Schema } = require("mongoose");
 
-const serviceDetailSchema = new Schema({
+const serviceSchema = new Schema({
   title: {
     type: String,
-    // required: true,
   },
   slogan: {
     type: String,
-    // required: true,
   },
   description: {
-    type: String,
-    // required: true,
-  },
-  id: {
     type: String,
   },
 });
 
-const ServiceDetail = model("ServiceDetail", serviceDetailSchema);
+const Service = model("Service", serviceSchema);
 
-module.exports = ServiceDetail;
+module.exports = Service;
