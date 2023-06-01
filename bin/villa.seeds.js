@@ -14,8 +14,8 @@ const villas = [
     bathrooms: 6,
     view: "mountain",
     pricePerWeek: 1200,
-    startDate: 12 / 10 / 2023,
-    endDate: 14 / 11 / 2023,
+    startDate: "12 / 10 / 2023",
+    endDate: "14 / 11 / 2023",
     galeryPhoto: [
       "https://cdn.lecollectionist.com/lc/production/uploads/photos/house-4283/2021-04-13-558ec93468e83e36d2cf1b05f1440d77.jpg?q=65&w=600&h=372",
       "https://cdn.lecollectionist.com/lc/production/uploads/photos/house-4283/2021-04-13-342ef5a288146d3d09621ab2b731b985.jpg?q=65&w=1200&h=421",
@@ -46,8 +46,8 @@ const villas = [
     bathrooms: 6,
     view: "sea",
     pricePerWeek: 4000,
-    startDate: 10 / 07 / 2023,
-    endDate: 11 / 08 / 2023,
+    startDate: "10 / 07 / 2023",
+    endDate: "11 / 08 / 2023",
     galeryPhoto: [
       "https://cdn.lecollectionist.com/lc/production/uploads/photos/house-4283/2021-04-13-558ec93468e83e36d2cf1b05f1440d77.jpg?q=65&w=600&h=372",
       "https://cdn.lecollectionist.com/lc/production/uploads/photos/house-4283/2021-04-13-342ef5a288146d3d09621ab2b731b985.jpg?q=65&w=1200&h=421",

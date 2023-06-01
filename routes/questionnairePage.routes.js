@@ -44,7 +44,7 @@ router.post("/", async (req, res, next) => {
 
     res.status(201).json({
       message: "Questionnaire added",
-      Questionnaire: newQuestionnaire,
+      newQuestionnaire,
     });
   } catch (e) {
     next(e), console.log("there is a post error");
@@ -57,7 +57,7 @@ router.delete("/:id", async (req, res, next) => {
     const deleteQuestionnaire = await Questionnaire.findByIdAndDelete(id);
     res.status(201).json({
       message: "the questionnaire is deleted",
-      Questionnaire: deleteQuestionnaire,
+      deleteQuestionnaire,
     });
   } catch (e) {
     next(e);
