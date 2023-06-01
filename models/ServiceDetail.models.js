@@ -10,6 +10,14 @@ const serviceSchema = new Schema({
   description: {
     type: String,
   },
+
+  imageCover: {
+    type: String,
+  },
+
+  imageServicePage: {
+    type: String,
+  },
 });
 
 const Service = model("Service", serviceSchema);

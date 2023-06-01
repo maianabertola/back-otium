@@ -4,8 +4,10 @@ const Trip = require("../models/Trip.model");
 
 // call all villa
 router.get("/", async (req, res, next) => {
+  console.log("kikoo");
   try {
     const findAllVilla = await Villa.find();
+    console.log(findAllVilla);
     res.status(201).json({
       message: "this is all the villa",
       Villa: findAllVilla,
@@ -24,13 +26,13 @@ router.get("/:id", async (req, res, next) => {
     res.json({ Villa: oneVilla, message: "this is your villa " });
   } catch (e) {
     next(e);
-    console.log("there is an error");
+    console.log("there is an error villa routes 1");
   }
 });
 
 router.post("/:id", async (req, res, next) => {
   try {
-    const { id } = req.params
+    const { id } = req.params;
     const { startDate, endDate, idVilla, idUser } = req.body;
     const oneTrip = await Trip.create({
       startDate,
@@ -43,7 +45,7 @@ router.post("/:id", async (req, res, next) => {
       message: "this is your trip",
     });
   } catch (e) {
-    next(e), console.log("there is an error");
+    next(e), console.log("there is an error villa routes 2");
   }
 });
 
