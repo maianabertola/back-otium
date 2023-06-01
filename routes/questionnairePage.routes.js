@@ -5,7 +5,7 @@ router.get("/", async (req, res, next) => {
   try {
     const findAllQuestionnaire = await Questionnaire.find();
     res.status(201).json({
-      message: "u have all questionnaire",
+      message: "this is all questionnaires",
       Questionnaire: findAllQuestionnaire,
     });
   } catch (e) {
@@ -18,11 +18,10 @@ router.post("/", async (req, res, next) => {
   try {
     const {
       name,
-      userId,
       startDate,
       endDate,
       country,
-      View,
+      view,
       idyllicStatus,
       numberOfPeople,
       petFriendly,
@@ -31,11 +30,11 @@ router.post("/", async (req, res, next) => {
     } = req.body;
     const newQuestionnaire = await Questionnaire.create({
       name,
-      userId,
+      userId: req.user._id,
       startDate,
       endDate,
       country,
-      View,
+      view,
       idyllicStatus,
       numberOfPeople,
       petFriendly,
@@ -66,4 +65,4 @@ router.delete("/:id", async (req, res, next) => {
   }
 });
 
-module.exports = router
+module.exports = router;

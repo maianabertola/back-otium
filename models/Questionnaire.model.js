@@ -3,7 +3,7 @@ const { model, Schema } = require("mongoose");
 const questionnaireSchema = new Schema({
   name: {
     type: String,
-    required: true,
+    // required: true,
   },
   userId: {
     type: Schema.Types.ObjectId,
@@ -15,35 +15,33 @@ const questionnaireSchema = new Schema({
   },
   endDate: {
     type: Date,
-    required: true,
+    // required: true,
   },
   country: {
     type: String,
-    required: true,
   },
   view: {
     type: String,
     enum: ["mountain", "sea"],
-    required: true,
+    // required: true,
   },
   idyllicStatus: {
     type: String,
     enum: ["Family Moment", "Friends Trip", "Life Party"],
-    required: true,
   },
   numberOfPeople: {
     type: Number,
-    required: true,
-    min: 1,
+    // required: true,
+    // min: 1,
   },
   petFriendly: {
     type: Boolean,
-    required: true,
+    // required: true,
   },
   numberOfBedroom: {
     type: Number,
-    required: true,
-    min: 1,
+    // required: true,
+    // min: 1,
   },
   services: [
     {

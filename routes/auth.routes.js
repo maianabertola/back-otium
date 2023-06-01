@@ -5,6 +5,10 @@ const jwt = require("jsonwebtoken")
 const isAuthenticated = require("../middleware/middlewares")
 const salt = 10;
 
+router.get("/user", async (req, res, next) => {
+  const findUser = await User.find()
+  res.json(findUser)
+})
 router.post("/signup", async (req, res, next) => {
   const {
     name,
@@ -24,8 +28,8 @@ router.post("/signup", async (req, res, next) => {
     if (foundUser) {
       return res.status(400).json({ message: "this email is already used" });
     }
-    const generatedSalt = await bcrypt.genSalt(salt);
-    const hashedPassword = await bcrypt.hash(password, generatedSalt);
+    // const generatedSalt = await bcrypt.genSalt(salt);
+    // const hashedPassword = await bcrypt.hash(password, generatedSalt);
 
     const newUser = {
       name,
@@ -34,7 +38,7 @@ router.post("/signup", async (req, res, next) => {
       phoneNumber,
       address,
       country,
-      password: hashedPassword,
+      password,
       postalCode,
     };
     const createdUser = await User.create(newUser);
