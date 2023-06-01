@@ -6,17 +6,17 @@ const isAuthenticated = async (req, res, next) => {
   if (!token) {
     return res.status(400).json({ message: "token not found" });
   }
-  token = token.replace("bearer ", "");
+  token = token.replace("Bearer ", "");
   const userToken = jwt.verify(token, process.env.TOKEN_SECRET);
   try {
-    const user = await User.findOne({ username: userToken.username });
+    const user = await User.findOne({ email: userToken.email });
     if (!user) {
       return res.status(400).json({ message: "Invalid token" });
     }
     req.user = user;
     next();
   } catch (e) {
-    return res.status(401).json({ message: "wrong credential" });
+    return res.status(401).json({ error: e });
   }
 };
 
