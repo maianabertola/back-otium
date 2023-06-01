@@ -4,6 +4,8 @@ const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken")
 const isAuthenticated = require("../middleware/middlewares")
 const salt = 10;
+const jwt = require("jsonwebtoken");
+const isAuthenticated = require("../middleware/middlewares");
 
 router.get("/user", async (req, res, next) => {
   const findUser = await User.find()
@@ -48,33 +50,42 @@ router.post("/signup", async (req, res, next) => {
   }
 });
 
+// router.get("/user", async (req, res, next) => {
+//   try {
+//     const allUsers = await User.find();
+//     res.json(allUsers);
+//   } catch (e) {
+//     next(e);
+//   }
+// });
+
 router.post("/login", async (req, res, next) => {
-    try {
-        const { name, password } = req.body;
-      if (!name || !password) {
-        return res.status(400).json({ message: "missing informations" });
-      }
-    const foundUser = await User.findOne({ name }).select("name password");
+  try {
+    const { email, password } = req.body;
+    if (!email || !password) {
+      return res.status(400).json({ message: "missing informations" });
+    }
+    const foundUser = await User.findOne({ email });
     if (!foundUser) {
-      return res.status(400).json({ message: "wrong " });
+      return res.status(400).json({ message: "Wrong credential" });
     }
-
-    const matchingPassword = await bcrypt.compare(password, foundUser.password);
-    if (!matchingPassword) {
-      return res.status(400).json({ message: "wrong credentials" });
+    const matchPassword = await bcrypt.compare(password, foundUser.password);
+    if (!matchPassword) {
+      return res.status(400).json({ message: "Wrong credential" });
     }
-
-    const payload = { name: foundUser.name, _id: foundUser._id };
+    const payload = { _id: foundUser._id, email };
     const token = jwt.sign(payload, process.env.TOKEN_SECRET, {
       algorithm: "HS256",
-      expiresIn: "3h",
+      expiresIn: "12h",
     });
 
-    res.status(200).json({ token: token });
+    res.status(201).json({ token });
   } catch (error) {
     next(error);
   }
 });
+
+
 
 router.get("/verify", isAuthenticated, async (req, res, next) => {
     try {
