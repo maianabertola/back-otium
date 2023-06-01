@@ -8,12 +8,14 @@ const villas = [
     name: "Fabine",
     country: "Italy",
     region: "Toscana",
-    numberPeople: 7,
+    numberOfPeople: 7,
     squareMeter: 230,
     bedrooms: 5,
     bathrooms: 6,
-    views: "mountain",
+    view: "mountain",
     pricePerWeek: 1200,
+    startDate: 12 / 10 / 2023,
+    endDate: 14 / 11 / 2023,
     galeryPhoto: [
       "https://cdn.lecollectionist.com/lc/production/uploads/photos/house-4283/2021-04-13-558ec93468e83e36d2cf1b05f1440d77.jpg?q=65&w=600&h=372",
       "https://cdn.lecollectionist.com/lc/production/uploads/photos/house-4283/2021-04-13-342ef5a288146d3d09621ab2b731b985.jpg?q=65&w=1200&h=421",
@@ -22,16 +24,15 @@ const villas = [
     ],
     slogan:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius malesuada nibh eget congue. Sed porta nibh nec dolor iaculis, eu maximus nisl egestas",
-    descriptionText:
+    description:
       " Nullam eu ante sit amet nisl euismod lobortis ut a metus. Etiam quis velit quis nulla tristique eleifend. Phasellus luctus volutpat tellus, ac convallis dui luctus in. Curabitur commodo mi a accumsan condimentum. Pellentesque vitae arcu arcu. Praesent lacus leo, vehicula nec commodo semper, convallis eget diam.",
     idylicStatus: ["Family Moment", "Friends Trip"],
     petFriendly: true,
     distinctiveFeatures: ["Lorem", "Lorem", "Lorem"],
     services: [],
-    descriptionPieces: [
-      "Room 1 : bed, tv, jacuzzi",
-      "Room 2 : bed, tv, jacuzzi",
-      "Room 3 : bed, tv, dressing",
+    roomsDescriptions: [
+      { room: "Room 1", description: "bed, tv, jacuzzi" },
+      { room: "Room 2", description: "bed, tv, patio" },
     ],
     address: "13 rue Keller - Paris",
   },
@@ -39,12 +40,14 @@ const villas = [
     name: "Damdam",
     country: "Spain",
     region: "Andalousie",
-    numberPeople: 3,
+    numberOfPeople: 3,
     squareMeter: 450,
     bedrooms: 10,
     bathrooms: 6,
-    views: "sea",
+    view: "sea",
     pricePerWeek: 4000,
+    startDate: 10 / 07 / 2023,
+    endDate: 11 / 08 / 2023,
     galeryPhoto: [
       "https://cdn.lecollectionist.com/lc/production/uploads/photos/house-4283/2021-04-13-558ec93468e83e36d2cf1b05f1440d77.jpg?q=65&w=600&h=372",
       "https://cdn.lecollectionist.com/lc/production/uploads/photos/house-4283/2021-04-13-342ef5a288146d3d09621ab2b731b985.jpg?q=65&w=1200&h=421",
@@ -53,16 +56,15 @@ const villas = [
     ],
     slogan:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius malesuada nibh eget congue. Sed porta nibh nec dolor iaculis, eu maximus nisl egestas",
-    descriptionText:
+    description:
       " Nullam eu ante sit amet nisl euismod lobortis ut a metus. Etiam quis velit quis nulla tristique eleifend. Phasellus luctus volutpat tellus, ac convallis dui luctus in. Curabitur commodo mi a accumsan condimentum. Pellentesque vitae arcu arcu. Praesent lacus leo, vehicula nec commodo semper, convallis eget diam.",
     idylicStatus: ["Family Moment"],
     petFriendly: true,
     distinctiveFeatures: ["Lorem", "Lorem", "Lorem"],
     services: ["6475bca7d026b3e05e3b5929", "6475bca7d026b3e05e3b5928"],
-    descriptionPieces: [
-      "Room 1 : bed, tv, jacuzzi",
-      "Room 2 : bed, tv, jacuzzi",
-      "Room 3 : bed, tv, dressing",
+    roomsDescriptions: [
+      { room: "Room 1", description: "bed, tv, jacuzzi" },
+      { room: "Room 2", description: "bed, tv, patio" },
     ],
     address: "13 rue Keller - Paris",
   },
@@ -70,13 +72,12 @@ const villas = [
 
 async function seed() {
   try {
-    await Villa.deleteMany()
-    await Villa.create(villas)
-    console.log("create all villas", villas)
-    process.exit()
-  } catch(e) {
-    
-    console.log("there is an error")
+    await Villa.deleteMany();
+    await Villa.create(villas);
+    console.log("create all villas", villas);
+    process.exit();
+  } catch (e) {
+    console.log("there is an error villa seed");
   }
 }
 

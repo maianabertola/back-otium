@@ -73,15 +73,19 @@ const villaSchema = new Schema({
     required: true,
   },
   distinctiveFeatures: [String],
-  services: [{
-    type: Schema.Types.ObjectId,
-    ref: "Service"
-  }],
+  services: [
+    {
+      type: Schema.Types.ObjectId,
+      ref: "Service",
+    },
+  ],
   roomsDescriptions: {
-    type: [{
-      room: String,
-      description: String
-    }],
+    type: [
+      {
+        room: String,
+        description: String,
+      },
+    ],
     required: true,
   },
   address: {
