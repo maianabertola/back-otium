@@ -29,7 +29,7 @@ app.use("/api", indexRoutes);
 
 app.use("/villa", villa);
 app.use("/service", services);
-app.use("/", authentification)
+app.use("/auth", authentification)
 app.use(isAuthenticated);
 app.use("/account", account)
 app.use("/favorite", favorite);

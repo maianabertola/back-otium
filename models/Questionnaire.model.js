@@ -27,15 +27,15 @@ const questionnaireSchema = new Schema({
   },
   idyllicStatus: {
     type: String,
-    enum: ["Family Moment", "Friends Trip", "Life Party"],
   },
   numberOfPeople: {
     type: Number,
     // required: true,
-    // min: 1,
+    min: 1,
   },
   petFriendly: {
-    type: Boolean,
+    type: Number,
+    min: 0,
     // required: true,
   },
   numberOfBedroom: {
