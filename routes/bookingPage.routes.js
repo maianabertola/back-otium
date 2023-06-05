@@ -1,11 +1,13 @@
 const router = require("express").Router();
 const Booking = require("../models/Booking.model");
+const Trip = require("../models/Trip.model");
 
+//the prefix is /booking
 router.get("/", async (req, res, next) => {
   try {
     const findAllBook = await Booking.find();
     res.status(201).json({
-      message: "there is all villa",
+      message: "this is your booking collection",
       Booking: findAllBook,
     });
   } catch (e) {
@@ -42,6 +44,26 @@ router.delete("/:id", async (req, res, next) => {
   } catch (e) {
     next(e);
     console.log("there is an error bkp");
+  }
+});
+
+//testing the trip
+
+router.post("/trip", async (req, res, next) => {
+  try {
+    const { startDate, endDate, idVilla, idUser } = req.body;
+    const createTrip = await Trip.create({
+      startDate,
+      endDate,
+      idVilla,
+      idUser,
+    });
+    res.status(201).json({
+      message: "Trip is created",
+      createTrip,
+    });
+  } catch (error) {
+    console.log(error, "there's an issue when creatingtrip, bookingPageroutes");
   }
 });
 

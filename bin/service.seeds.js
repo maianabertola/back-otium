@@ -9,6 +9,7 @@ const services = [
     description: "lorem des",
     imageCover: "",
     imageServicePage: "",
+    id: "647cc042fe3aca1e35638690",
   },
   {
     title: "Chauffeur",
@@ -16,6 +17,7 @@ const services = [
     description: "lorem des",
     imageCover: "",
     imageServicePage: "",
+    id: "647cc042fe3aca1e35638691",
   },
   {
     title: "Gouvernante",
@@ -23,6 +25,7 @@ const services = [
     description: "lorem des",
     imageCover: "",
     imageServicePage: "",
+    id: "647cc042fe3aca1e35638692",
   },
 ];
 

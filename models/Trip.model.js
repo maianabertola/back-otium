@@ -11,12 +11,12 @@ const tripSchema = new Schema({
   },
   idVilla: {
     type: Schema.Types.ObjectId,
-    required: true,
+    // required: true,
     ref: "Villa",
   },
   idUser: {
     type: Schema.Types.ObjectId,
-    required: true,
+    // required: true,
     ref: "User",
   },
 });

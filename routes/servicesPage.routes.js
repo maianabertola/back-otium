@@ -1,6 +1,7 @@
 const router = require("express").Router();
 const Service = require("../models/ServiceDetail.models");
 
+//prefix is /service
 router.get("/", async (req, res, next) => {
   try {
     const allServices = await Service.find();

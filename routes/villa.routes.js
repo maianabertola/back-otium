@@ -22,8 +22,10 @@ router.get("/", async (req, res, next) => {
 router.get("/:id", async (req, res, next) => {
   try {
     const { id } = req.params;
-    const oneVilla = await Villa.findById(id);
+    const oneVilla = await Villa.findById(id).populate("services");
     res.json({ Villa: oneVilla, message: "this is your villa " });
+    // const services = await Villa.findById(id).populate("services");
+    // res.json({ message: "les services sont:", services, oneVilla });
   } catch (e) {
     next(e);
     console.log("there is an error villa routes 1");
