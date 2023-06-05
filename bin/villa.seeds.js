@@ -14,8 +14,8 @@ const villas = [
     bathrooms: 6,
     view: "mountain",
     pricePerWeek: 1200,
-    startDate: "12 / 10 / 2023",
-    endDate: "14 / 11 / 2023",
+    startDate: "2023-07-21",
+    endDate: "2023-07-28",
     galeryPhoto: [
       "https://cdn.lecollectionist.com/lc/production/uploads/photos/house-4283/2021-04-13-558ec93468e83e36d2cf1b05f1440d77.jpg?q=65&w=600&h=372",
       "https://cdn.lecollectionist.com/lc/production/uploads/photos/house-4283/2021-04-13-342ef5a288146d3d09621ab2b731b985.jpg?q=65&w=1200&h=421",
@@ -29,7 +29,7 @@ const villas = [
     idylicStatus: ["Family Moment", "Friends Trip"],
     petFriendly: true,
     distinctiveFeatures: ["Lorem", "Lorem", "Lorem"],
-    services: [],
+    services: ["647cc042fe3aca1e35638690"],
     roomsDescriptions: [
       { room: "Room 1", description: "bed, tv, jacuzzi" },
       { room: "Room 2", description: "bed, tv, patio" },
@@ -46,8 +46,8 @@ const villas = [
     bathrooms: 6,
     view: "sea",
     pricePerWeek: 4000,
-    startDate: "10 / 07 / 2023",
-    endDate: "11 / 08 / 2023",
+    startDate: "2023-08-21",
+    endDate: "2023-07-28",
     galeryPhoto: [
       "https://cdn.lecollectionist.com/lc/production/uploads/photos/house-4283/2021-04-13-558ec93468e83e36d2cf1b05f1440d77.jpg?q=65&w=600&h=372",
       "https://cdn.lecollectionist.com/lc/production/uploads/photos/house-4283/2021-04-13-342ef5a288146d3d09621ab2b731b985.jpg?q=65&w=1200&h=421",
@@ -61,7 +61,7 @@ const villas = [
     idylicStatus: ["Family Moment"],
     petFriendly: true,
     distinctiveFeatures: ["Lorem", "Lorem", "Lorem"],
-    services: ["6475bca7d026b3e05e3b5929", "6475bca7d026b3e05e3b5928"],
+    services: ["647cc042fe3aca1e35638691", "647cc042fe3aca1e35638690"],
     roomsDescriptions: [
       { room: "Room 1", description: "bed, tv, jacuzzi" },
       { room: "Room 2", description: "bed, tv, patio" },
@@ -77,7 +77,7 @@ async function seed() {
     console.log("create all villas", villas);
     process.exit();
   } catch (e) {
-    console.log("there is an error villa seed");
+    console.log("there is an error with the villa seeds");
   }
 }
 
