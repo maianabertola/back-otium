@@ -17,16 +17,16 @@ const questionnaireSchema = new Schema({
     type: Date,
     // required: true,
   },
-  country: {
-    type: String,
+  pickedCountry: {
+    type: [String],
   },
-  view: {
+  pickedView: {
     type: String,
     enum: ["mountain", "sea"],
     // required: true,
   },
-  idyllicStatus: {
-    type: String,
+  pickedIdyllicStatus: {
+    type: [String],
   },
   numberOfPeople: {
     type: Number,
@@ -34,18 +34,17 @@ const questionnaireSchema = new Schema({
     min: 1,
   },
   petFriendly: {
-    type: Number,
-    min: 0,
+    type: [String],
     // required: true,
   },
   numberOfBedroom: {
     type: Number,
     // required: true,
-    // min: 1,
+    min: 1,
   },
-  services: [
+  pickedServices: [
     {
-      type: Schema.Types.ObjectId,
+      type: [String],
       ref: "Service",
     },
   ],

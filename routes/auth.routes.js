@@ -2,6 +2,7 @@ const router = require("express").Router();
 const User = require("../models/User.model");
 const bcrypt = require("bcryptjs");
 const isAuthenticated = require("../middleware/middlewares");
+
 const salt = 10;
 const jwt = require("jsonwebtoken");
 
@@ -66,6 +67,7 @@ router.post("/login", async (req, res, next) => {
     const token = jwt.sign(payload, process.env.TOKEN_SECRET, {
       algorithm: "HS256",
       expiresIn: "10d",
+
     });
 
     res.status(201).json({ token });
