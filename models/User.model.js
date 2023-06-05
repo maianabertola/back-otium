@@ -17,12 +17,12 @@ const userSchema = new Schema({
         type: String,
         required: true,
     },
-    address: {
-        street: String,
-        zipCode: String,
-        streetNumber: String,
-        country: String
-    },
+    // address: {
+    //     street: String,
+    //     zipCode: String,
+    //     streetNumber: String,
+    //     country: String
+    // },
     password: {
         type: String,
         required: true,

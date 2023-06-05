@@ -6,7 +6,7 @@ router.get("/", async (req, res, next) => {
     const findAllQuestionnaire = await Questionnaire.find();
     res.status(201).json({
       message: "this is all questionnaires",
-      Questionnaire: findAllQuestionnaire,
+      findAllQuestionnaire,
     });
   } catch (e) {
     next(e);
@@ -15,33 +15,34 @@ router.get("/", async (req, res, next) => {
 });
 
 router.post("/", async (req, res, next) => {
+  console.log("Hello from POST Questionnaire");
   try {
     const {
       name,
+      userId,
       startDate,
       endDate,
-      country,
-      view,
-      idyllicStatus,
+      pickedCountry,
+      pickedView,
+      pickedIdyllicStatus,
       numberOfPeople,
       petFriendly,
       numberOFBedroom,
-      services,
+      pickedServices,
     } = req.body;
     const newQuestionnaire = await Questionnaire.create({
       name,
-      userId: req.user._id,
+      userId,
       startDate,
       endDate,
-      country,
-      view,
-      idyllicStatus,
+      pickedCountry,
+      pickedView,
+      pickedIdyllicStatus,
       numberOfPeople,
       petFriendly,
       numberOFBedroom,
-      services,
+      pickedServices,
     });
-
     res.status(201).json({
       message: "Questionnaire added",
       newQuestionnaire,
