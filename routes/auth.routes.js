@@ -1,9 +1,10 @@
 const router = require("express").Router();
 const User = require("../models/User.model");
 const bcrypt = require("bcryptjs");
+const isAuthenticated = require("../middleware/middlewares");
+
 const salt = 10;
 const jwt = require("jsonwebtoken");
-const isAuthenticated = require("../middleware/middlewares");
 
 router.get("/user", async (req, res, next) => {
   const findUser = await User.find();
@@ -48,15 +49,6 @@ router.post("/signup", async (req, res, next) => {
   }
 });
 
-// router.get("/user", async (req, res, next) => {
-//   try {
-//     const allUsers = await User.find();
-//     res.json(allUsers);
-//   } catch (e) {
-//     next(e);
-//   }
-// });
-
 router.post("/login", async (req, res, next) => {
   try {
     const { email, password } = req.body;
@@ -74,7 +66,8 @@ router.post("/login", async (req, res, next) => {
     const payload = { _id: foundUser._id, email };
     const token = jwt.sign(payload, process.env.TOKEN_SECRET, {
       algorithm: "HS256",
-      expiresIn: "12h",
+      expiresIn: "10d",
+
     });
 
     res.status(201).json({ token });

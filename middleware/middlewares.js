@@ -3,6 +3,7 @@ const User = require("../models/User.model");
 
 const isAuthenticated = async (req, res, next) => {
   let token = req.headers.authorization;
+  console.log(req.headers);
   if (!token) {
     return res.status(400).json({ message: "token not found" });
   }
@@ -10,7 +11,6 @@ const isAuthenticated = async (req, res, next) => {
   const userToken = jwt.verify(token, process.env.TOKEN_SECRET);
   try {
     const user = await User.findOne({ email: userToken.email });
-
     if (!user) {
       return res.status(400).json({ message: "Invalid token" });
     }
@@ -18,7 +18,6 @@ const isAuthenticated = async (req, res, next) => {
     next();
   } catch (e) {
     return res.status(401).json({ error: e });
-
   }
 };
 

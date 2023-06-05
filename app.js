@@ -25,12 +25,16 @@ const booking = require("./routes/bookingPage.routes");
 const isAuthenticated = require("./middleware/middlewares");
 const account = require("./routes/account.routes");
 
+const signup = require("./routes/signupPage.routes")
+
+
 app.use("/api", indexRoutes);
 
+app.use("/signup", signup)
 app.use("/villa", villa);
 app.use("/service", services);
-app.use("/", authentification);
-// app.use(isAuthenticated);
+app.use("/auth", authentification);
+app.use(isAuthenticated);
 app.use("/account", account);
 app.use("/favorite", favorite);
 app.use("/questionnaire", questionnaire);
