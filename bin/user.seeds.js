@@ -5,30 +5,30 @@ const User = require("../models/User.model");
 
 const users = [
   {
-    name: "bryan",
-    birthDate: "24/01/1991",
+    name: "Bryan",
+    birthDate: "1990-06-16T18:51:04.000Z",
     email: "bryan@mail.com",
     phoneNumber: "0635329536",
     address: "13 rue de la tourte",
-    country: "france",
+    country: "Italy",
     postalCode: "94170",
   },
   {
-    name: "romain",
-    birthDate: "29/07/1995",
+    name: "Romain",
+    birthDate: "1993-12-16T18:51:04.000Z",
     email: "romain@mail.com",
     phoneNumber: "0610111213",
     address: "14 rue de la tourte",
-    country: "france",
+    country: "France",
     postalCode: "75010",
   },
   {
-    name: "antoine",
-    birthDate: "29/01/1991",
+    name: "Antoine",
+    birthDate: "1993-09-16T18:51:04.000Z",
     email: "antoine@mail.com",
     phoneNumber: "0727389406",
     address: "15 rue de la tourte",
-    country: "france",
+    country: "Portugal",
     postalCode: "75011",
   },
 ];
@@ -39,9 +39,8 @@ async function seed() {
     await User.create(users);
     console.log("create all users", users);
     process.exit();
-  } catch (e) {
-    next(e);
-    console.log("there is an error user seed");
+  } catch (error) {
+    console.log("there is an error with user seed", error);
   }
 }
 
