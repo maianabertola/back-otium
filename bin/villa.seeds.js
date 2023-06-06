@@ -3,6 +3,8 @@ require("dotenv/config");
 
 const Villa = require("../models/Villa.model");
 
+console.log("to delete");
+
 const villas = [
   {
     name: "Fabine",
