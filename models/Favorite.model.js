@@ -5,10 +5,14 @@ const favoriteSchema = new Schema({
     type: Schema.Types.ObjectId,
     ref: "User",
   },
-  idVilla: {
-    type: Schema.Types.ObjectId,
-    ref: "Villa",
-  },
+  favoriteVillas: [
+    {
+      villa: {
+        type: Schema.Types.ObjectId,
+        ref: "Villa",
+      },
+    },
+  ],
 });
 
 const Favorite = model("Favorite", favoriteSchema);

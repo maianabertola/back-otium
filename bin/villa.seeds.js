@@ -12,16 +12,29 @@ const villas = [
     squareMeter: 230,
     bedrooms: 5,
     bathrooms: 6,
-    view: "mountain",
+    view: "Mountain",
     pricePerWeek: 1200,
-    startDate: "2023-07-21",
-    endDate: "2023-07-28",
+    bookedDates: [
+      {
+        Start: "2023-06-10T18:51:04.000Z",
+        End: "2023-06-18T18:51:04.000Z",
+      },
+      {
+        Start: "2023-07-10T18:51:04.000Z",
+        End: "2023-07-18T18:51:04.000Z",
+      },
+    ],
+    previewPhoto:
+      "https://cdn.lecollectionist.com/lc/production/uploads/photos/house-4283/2021-04-14-951697a8333fc83ebba9351ea20e7148.jpg?q=65&w=300&h=448",
+    heroPhoto:
+      "https://cdn.lecollectionist.com/lc/production/uploads/photos/house-4283/2021-04-13-558ec93468e83e36d2cf1b05f1440d77.jpg?q=65&w=1500",
     galeryPhoto: [
       "https://cdn.lecollectionist.com/lc/production/uploads/photos/house-4283/2021-04-13-558ec93468e83e36d2cf1b05f1440d77.jpg?q=65&w=600&h=372",
       "https://cdn.lecollectionist.com/lc/production/uploads/photos/house-4283/2021-04-13-342ef5a288146d3d09621ab2b731b985.jpg?q=65&w=1200&h=421",
       "https://cdn.lecollectionist.com/lc/production/uploads/photos/house-4283/2021-04-13-54f37a9ad46037a43b1ebef28ebb0cca.jpg?q=65&w=600&h=886",
       "https://cdn.lecollectionist.com/lc/production/uploads/photos/house-4283/2021-04-13-5731003a3ccc09077aa321d7bbf23d65.jpg?q=65&w=600&h=824",
     ],
+    tagline: "The coast's most beautiful view",
     slogan:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius malesuada nibh eget congue. Sed porta nibh nec dolor iaculis, eu maximus nisl egestas",
     description:
@@ -44,16 +57,29 @@ const villas = [
     squareMeter: 450,
     bedrooms: 10,
     bathrooms: 6,
-    view: "sea",
+    view: "Sea",
     pricePerWeek: 4000,
-    startDate: "2023-08-21",
-    endDate: "2023-07-28",
+    bookedDates: [
+      {
+        Start: "2023-06-16T18:51:04.000Z",
+        End: "2023-06-18T18:51:04.000Z",
+      },
+      {
+        Start: "2023-07-01T18:51:04.000Z",
+        End: "2023-07-05T18:51:04.000Z",
+      },
+    ],
+    previewPhoto:
+      "https://cdn.lecollectionist.com/lc/production/uploads/photos/house-4283/2021-04-14-951697a8333fc83ebba9351ea20e7148.jpg?q=65&w=300&h=448",
+    heroPhoto:
+      "https://cdn.lecollectionist.com/lc/production/uploads/photos/house-4283/2021-04-13-558ec93468e83e36d2cf1b05f1440d77.jpg?q=65&w=1500",
     galeryPhoto: [
       "https://cdn.lecollectionist.com/lc/production/uploads/photos/house-4283/2021-04-13-558ec93468e83e36d2cf1b05f1440d77.jpg?q=65&w=600&h=372",
       "https://cdn.lecollectionist.com/lc/production/uploads/photos/house-4283/2021-04-13-342ef5a288146d3d09621ab2b731b985.jpg?q=65&w=1200&h=421",
       "https://cdn.lecollectionist.com/lc/production/uploads/photos/house-4283/2021-04-13-54f37a9ad46037a43b1ebef28ebb0cca.jpg?q=65&w=600&h=886",
       "https://cdn.lecollectionist.com/lc/production/uploads/photos/house-4283/2021-04-13-5731003a3ccc09077aa321d7bbf23d65.jpg?q=65&w=600&h=824",
     ],
+    tagline: "The coast's most beautiful view",
     slogan:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius malesuada nibh eget congue. Sed porta nibh nec dolor iaculis, eu maximus nisl egestas",
     description:
@@ -77,7 +103,7 @@ async function seed() {
     console.log("create all villas", villas);
     process.exit();
   } catch (e) {
-    console.log("there is an error with the villa seeds");
+    console.log("there is an error with the villa seeds", e);
   }
 }
 
