@@ -7,7 +7,9 @@
     "dev": "nodemon server.js",
     "seed:service": "node ./bin/service.seeds.js",
     "seed:villa": "node ./bin/villa.seeds.js",
-    "seed:all": "npm run seed:service && npm run seed:villa"
+    "seed:user": "node ./bin/user.seeds.js",
+    "seed:favorite": "node ./bin/favorite.seeds.js",
+    "seed:all": "npm run seed:service && npm run seed:villa && npm run seed:user && npm run seed:favorite"
   },
   "dependencies": {
     "bcrypt": "^5.1.0",

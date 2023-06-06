@@ -33,32 +33,51 @@ const villaSchema = new Schema({
   },
   view: {
     type: String,
-    enum: ["mountain", "sea"],
+    enum: ["Mountain", "Sea"],
     required: true,
   },
   pricePerWeek: {
     type: Number,
     required: true,
   },
-  startDate: {
-    type: Date,
-    default: Date.now,
+  bookedDates: [
+    {
+      Start: {
+        type: Date,
+        default: Date.now,
+      },
+      End: {
+        type: Date,
+      },
+    },
+  ],
+  previewPhoto: {
+    type: String,
     required: true,
   },
-  endDate: {
-    type: Date,
+
+  heroPhoto: {
+    type: String,
     required: true,
   },
+
   galeryPhoto: {
     type: [String],
     required: true,
   },
+  tagline: {
+    type: String,
+    maxLength: 33,
+    required: true,
+  },
   slogan: {
     type: String,
+    maxLength: 170,
     required: true,
   },
   description: {
     type: String,
+    maxLength: 380,
     required: true,
   },
   idylicStatus: {

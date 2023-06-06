@@ -18,10 +18,6 @@ const serviceSchema = new Schema({
   imageServicePage: {
     type: String,
   },
-
-  id: {
-    type: String,
-  },
 });
 
 const Service = model("Service", serviceSchema);
