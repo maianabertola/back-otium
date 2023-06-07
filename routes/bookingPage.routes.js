@@ -54,9 +54,25 @@ router.delete("/:id", async (req, res, next) => {
   }
 });
 
+router.get("/created", async (req, res, next) => {
+  try {
+    const getBookingsOfTheUser = await Booking.find({
+      userId: req.user_id,
+    }).sort({
+      bookedDates: -1,
+    });
+    res.status(201).json({
+      message: "this is the bookings made by the user",
+      Booking: getBookingsOfTheUser,
+    });
+  } catch (error) {
+    console.log(
+      "there is an error when getting the bookings made by the user in the bookingPage routes",
+      error
+    );
+  }
+});
 // route.delete("/:id") -> récupérer l'iD
-
-console.log("toto");
 
 //testing the trip
 // router.post("/trip", async (req, res, next) => {
