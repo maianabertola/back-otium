@@ -18,13 +18,14 @@ router.get("/", async (req, res, next) => {
 
 router.post("/", async (req, res, next) => {
   try {
-    const { numberOfPeople, pet, message, userId, villaId } = req.body;
+    //enlevé temporairement le pet property
+    const { numberOfPeople, message, userId, villaId, bookedDates } = req.body;
     const newBook = await Booking.create({
       numberOfPeople,
-      pet,
       message,
       userId,
       villaId,
+      bookedDates,
     });
     res.status(201).json({
       message: "Villa booked",
@@ -53,24 +54,27 @@ router.delete("/:id", async (req, res, next) => {
   }
 });
 
-//testing the trip
+// route.delete("/:id") -> récupérer l'iD
 
-router.post("/trip", async (req, res, next) => {
-  try {
-    const { startDate, endDate, idVilla, idUser } = req.body;
-    const createTrip = await Trip.create({
-      startDate,
-      endDate,
-      idVilla,
-      idUser,
-    });
-    res.status(201).json({
-      message: "Trip is created",
-      createTrip,
-    });
-  } catch (error) {
-    console.log(error, "there's an issue when creatingtrip, bookingPageroutes");
-  }
-});
+console.log("toto");
+
+//testing the trip
+// router.post("/trip", async (req, res, next) => {
+//   try {
+//     const { startDate, endDate, idVilla, idUser } = req.body;
+//     const createTrip = await Trip.create({
+//       startDate,
+//       endDate,
+//       idVilla,
+//       idUser,
+//     });
+//     res.status(201).json({
+//       message: "Trip is created",
+//       createTrip,
+//     });
+//   } catch (error) {
+//     console.log(error, "there's an issue when creatingtrip, bookingPageroutes");
+//   }
+// });
 
 module.exports = router;
