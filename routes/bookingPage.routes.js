@@ -12,7 +12,7 @@ router.get("/", async (req, res, next) => {
     });
   } catch (e) {
     next(e);
-    console.log("there is an error booking page");
+    console.log("there is when getting the booking from bookingPageroutes", e);
   }
 });
 
@@ -32,7 +32,10 @@ router.post("/", async (req, res, next) => {
     });
   } catch (e) {
     next(e);
-    console.log("there is an error booking page routes");
+    console.log(
+      "there is an error when creating a booking from bookingPageroutes",
+      e
+    );
   }
 });
 
@@ -43,7 +46,10 @@ router.delete("/:id", async (req, res, next) => {
     res.status(201).json({ message: "book deleted", Booking: deleteBook });
   } catch (e) {
     next(e);
-    console.log("there is an error bkp");
+    console.log(
+      "there is an error when deleting a booking from bookingPageroutes",
+      e
+    );
   }
 });
 
