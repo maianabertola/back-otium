@@ -1,5 +1,5 @@
+require("dotenv").config();
 require("../db/index");
-require("dotenv/config");
 const ServiceDetail = require("../models/ServiceDetail.models");
 
 const services = [

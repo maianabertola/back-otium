@@ -34,7 +34,7 @@ app.use("/signup", signup)
 app.use("/villa", villa);
 app.use("/service", services);
 app.use("/auth", authentification);
-app.use(isAuthenticated);
+// app.use(isAuthenticated);
 app.use("/account", account);
 app.use("/favorite", favorite);
 app.use("/questionnaire", questionnaire);

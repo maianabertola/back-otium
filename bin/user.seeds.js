@@ -1,5 +1,5 @@
+require("dotenv").config();
 require("../db/index");
-require("dotenv/config");
 
 const User = require("../models/User.model");
 
