@@ -52,18 +52,26 @@ router.post("/", async (req, res, next) => {
   }
 });
 
-router.delete("/:id", async (req, res, next) => {
-  try {
-    const { id } = req.params;
-    const deleteQuestionnaire = await Questionnaire.findByIdAndDelete(id);
-    res.status(201).json({
-      message: "the questionnaire is deleted",
-      deleteQuestionnaire,
-    });
-  } catch (e) {
-    next(e);
-    console.log("there is a delete error");
-  }
-});
+// router.delete("/:id", async (req, res, next) => {
+//   try {
+//     const { id } = req.params;
+//     const deleteQuestionnaire = await Questionnaire.findByIdAndDelete(id);
+//     res.status(201).json({
+//       message: "the questionnaire is deleted",
+//       deleteQuestionnaire,
+//     });
+
+//     router.post(":/id", async (req, res, next) => {
+//       try {
+//         const { id } = req.params
+//         const updateQuestionnaire = await Questionnaire.findByIdAndUpdate(id)
+//         res.status(201).json({message: "the questionnaire is updated",
+//         updateQuestionnaire})
+      
+//   } catch (e) {
+//     next(e);
+//     console.log("there is a delete error");
+//   }
+// });
 
 module.exports = router;
