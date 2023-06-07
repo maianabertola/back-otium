@@ -22,6 +22,8 @@ router.post("/", async (req, res, next) => {
       email,
       phoneNumber,
       password,
+      country,
+      address,
     } = req.body;
     const newUser = await User.create({
       name,
@@ -29,6 +31,8 @@ router.post("/", async (req, res, next) => {
       email,
       phoneNumber,
       password,
+      country,
+      address,
     });
     res.status(201).json({
         message: "new user",

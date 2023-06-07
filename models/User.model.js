@@ -17,16 +17,16 @@ const userSchema = new Schema({
     type: String,
     required: true,
   },
-  // address: {
-  //     street: String,
-  //     zipCode: String,
-  //     streetNumber: String,
-  //     country: String
-  // },
-  // password: {
-  //     type: String,
-  //     required: true,
-  // }
+  address: {
+    type: String,
+  },
+  country: {
+    type: String,
+  },
+  password: {
+    type: String,
+    required: true,
+  },
 });
 
 const User = model("User", userSchema);

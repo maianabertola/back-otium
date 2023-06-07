@@ -19,7 +19,6 @@ router.post("/signup", async (req, res, next) => {
     address,
     country,
     password,
-    postalCode,
   } = req.body;
   if (!name || !birthDate || !email || !phoneNumber || !password) {
     return res.status(400).json({ message: "missing informations" });
@@ -40,7 +39,6 @@ router.post("/signup", async (req, res, next) => {
       address,
       country,
       password: hashedPassword,
-      postalCode,
     };
     const createdUser = await User.create(newUser);
     res.status(201).json({ message: "new user created", User: createdUser });
@@ -59,6 +57,7 @@ router.post("/login", async (req, res, next) => {
     if (!foundUser) {
       return res.status(400).json({ message: "Wrong credential" });
     }
+    console.log(foundUser);
     const matchPassword = await bcrypt.compare(password, foundUser.password);
     if (!matchPassword) {
       return res.status(400).json({ message: "Wrong credential" });
@@ -67,7 +66,6 @@ router.post("/login", async (req, res, next) => {
     const token = jwt.sign(payload, process.env.TOKEN_SECRET, {
       algorithm: "HS256",
       expiresIn: "10d",
-
     });
 
     res.status(201).json({ token });

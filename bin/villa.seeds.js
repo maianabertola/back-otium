@@ -1,5 +1,5 @@
+require("dotenv").config();
 require("../db/index");
-require("dotenv/config");
 
 const Villa = require("../models/Villa.model");
 
