@@ -19,7 +19,8 @@ router.get("/", async (req, res, next) => {
 router.post("/", async (req, res, next) => {
   try {
     //enlevé temporairement le pet property
-    const { numberOfPeople, message, userId, villaId, bookedDates } = req.body;
+    const { villaId } = req.params;
+    const { numberOfPeople, message, userId, bookedDates } = req.body;
     const newBook = await Booking.create({
       numberOfPeople,
       message,
