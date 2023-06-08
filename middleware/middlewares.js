@@ -9,7 +9,7 @@ const isAuthenticated = async (req, res, next) => {
   }
   token = token.replace("Bearer ", "");
   const userToken = jwt.verify(token, process.env.TOKEN_SECRET);
-  console.log(token, userToken);
+  // console.log(token, userToken);
   try {
     const user = await User.findOne({ email: userToken.email });
     if (!user) {

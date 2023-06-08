@@ -40,27 +40,16 @@ router.post("/", async (req, res, next) => {
   }
 });
 
-router.delete("/:id", async (req, res, next) => {
-  try {
-    const { id } = req.params;
-    const deleteBook = await Booking.findByIdAndDelete(id);
-    res.status(201).json({ message: "book deleted", Booking: deleteBook });
-  } catch (e) {
-    next(e);
-    console.log(
-      "there is an error when deleting a booking from bookingPageroutes",
-      e
-    );
-  }
-});
-
+//find the bookings made by one user
 router.get("/created", async (req, res, next) => {
   try {
     const getBookingsOfTheUser = await Booking.find({
-      userId: req.user_id,
-    }).sort({
-      bookedDates: -1,
-    });
+      userId: req.user._id,
+    })
+      .sort({
+        bookedDates: -1,
+      })
+      .populate("villaId");
     res.status(201).json({
       message: "this is the bookings made by the user",
       Booking: getBookingsOfTheUser,
@@ -72,25 +61,61 @@ router.get("/created", async (req, res, next) => {
     );
   }
 });
-// route.delete("/:id") -> récupérer l'iD
 
-//testing the trip
-// router.post("/trip", async (req, res, next) => {
-//   try {
-//     const { startDate, endDate, idVilla, idUser } = req.body;
-//     const createTrip = await Trip.create({
-//       startDate,
-//       endDate,
-//       idVilla,
-//       idUser,
-//     });
-//     res.status(201).json({
-//       message: "Trip is created",
-//       createTrip,
-//     });
-//   } catch (error) {
-//     console.log(error, "there's an issue when creatingtrip, bookingPageroutes");
-//   }
-// });
+// user delete one booking
+router.delete("/:id", async (req, res, next) => {
+  try {
+    const { id } = req.params;
+    const deletedBooking = await Booking.findByIdAndDelete(id);
+    res
+      .status(201)
+      .json({ message: "Booking deleted", Booking: deletedBooking });
+  } catch (e) {
+    next(e);
+    console.log(
+      "there is an error when deleting a booking from bookingPageroutes",
+      e
+    );
+  }
+});
+
+// user can edit one booking
+
+router.patch("/:id", async (req, res, next) => {
+  try {
+    const { id } = req.params;
+    const patchedBooking = await Booking.findByIdAndUpdate(id, req.body, {
+      new: true,
+    });
+    res
+      .status(200)
+      .json({ message: "Booking updated", Booking: patchedBooking });
+  } catch (error) {
+    console.log(
+      "there is an error when patching a booking from bookingPageroutes",
+      error
+    );
+  }
+});
+
+//find a booking by ID
+router.get("/edit/:id", async (req, res, next) => {
+  try {
+    const { id } = req.params;
+    const bookingId = id.substring(1);
+    const getOneBookingById = await Booking.findById(bookingId).populate(
+      "villaId"
+    );
+    res.status(201).json({
+      message: "this is the bookings made by the user",
+      Booking: getOneBookingById,
+    });
+  } catch (error) {
+    console.log(
+      "there is an error when getting the bookings made by the user in the bookingPage routes",
+      error
+    );
+  }
+});
 
 module.exports = router;
