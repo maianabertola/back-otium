@@ -26,4 +26,24 @@ router.get("/:id", async (req, res, next) => {
   }
 });
 
+router.patch("/:id", async (req, res, next) => {
+  try {
+    const { id } = req.params;
+    const { bookedDates } = req.body;
+    const patchedVilla = await Villa.findByIdAndUpdate(
+      id,
+      {
+        bookedDates,
+      },
+      { new: true }
+    );
+    res.status(200).json({
+      message: "we updated the booked dates of the villa",
+      patchedVilla,
+    });
+  } catch (error) {
+    console.log("error patching the dates of the villa in villa Routes", error);
+  }
+});
+
 module.exports = router;
