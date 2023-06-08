@@ -3,7 +3,7 @@ const Questionnaire = require("../models/Questionnaire.model");
 
 router.get("/", async (req, res, next) => {
   try {
-    const findAllQuestionnaire = await Questionnaire.find();
+    const findAllQuestionnaire = await Questionnaire.find().sort({createdAt: -1});
     res.status(201).json({
       message: "this is all questionnaires",
       findAllQuestionnaire,
@@ -38,7 +38,7 @@ router.post("/", async (req, res, next) => {
       pickedIdyllicStatus,
       numberOfPeople,
       petFriendly,
-      numberOFBedroom,
+      numberOfBedroom,
       pickedServices,
     } = req.body;
     const newQuestionnaire = await Questionnaire.create({
@@ -49,7 +49,7 @@ router.post("/", async (req, res, next) => {
       pickedIdyllicStatus,
       numberOfPeople,
       petFriendly,
-      numberOFBedroom,
+      numberOfBedroom,
       pickedServices,
     });
     res.status(201).json({
@@ -85,7 +85,7 @@ router.patch("/:id", async (req, res, next) => {
       pickedIdyllicStatus,
       numberOfPeople,
       petFriendly,
-      numberOFBedroom,
+      numberOfBedroom,
       pickedServices,
     } = req.body;
     const updateQuestionnaire = await Questionnaire.findByIdAndUpdate(
@@ -97,7 +97,7 @@ router.patch("/:id", async (req, res, next) => {
         pickedIdyllicStatus,
         numberOfPeople,
         petFriendly,
-        numberOFBedroom,
+        numberOfBedroom,
         pickedServices,
       },
       { new: true }
