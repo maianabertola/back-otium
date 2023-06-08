@@ -13,7 +13,9 @@ router.get("/user", async (req, res, next) => {
 router.post("/signup", async (req, res, next) => {
   const { name, birthDate, email, phoneNumber, address, country, password } =
     req.body;
+
   if (!name || !birthDate || !email || !password) {
+
     return res.status(400).json({ message: "missing informations" });
   }
   try {

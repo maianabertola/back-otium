@@ -24,6 +24,17 @@ const bookingSchema = new Schema({
     require: true,
     ref: "Villa",
   },
+  bookedDates: {
+    Start: {
+      type: Date,
+      default: Date.now,
+      required: true,
+    },
+    End: {
+      type: Date,
+      required: true,
+    },
+  },
 });
 
 const Booking = model("Booking", bookingSchema);
