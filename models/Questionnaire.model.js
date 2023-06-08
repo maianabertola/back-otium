@@ -9,14 +9,7 @@ const questionnaireSchema = new Schema({
     type: Schema.Types.ObjectId,
       ref: "User",
   },
-  startDate: {
-    type: Date,
-    default: Date.now,
-  },
-  endDate: {
-    type: Date,
-    // required: true,
-  },
+  
   pickedCountry: {
     type: [String],
   },

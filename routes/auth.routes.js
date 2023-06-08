@@ -13,7 +13,9 @@ router.get("/user", async (req, res, next) => {
 router.post("/signup", async (req, res, next) => {
   const { name, birthDate, email, phoneNumber, address, country, password } =
     req.body;
-  if (!name || !birthDate || !email || !phoneNumber || !password) {
+
+  if (!name || !birthDate || !email || !password) {
+
     return res.status(400).json({ message: "missing informations" });
   }
   try {
@@ -68,12 +70,7 @@ router.post("/login", async (req, res, next) => {
 });
 
 router.get("/verify", isAuthenticated, async (req, res, next) => {
-  try {
-    console.log(req.user);
-    res.json(req.user);
-  } catch (e) {
-    res.json({ message: "the authentification is wrong" });
-  }
+  res.json(req.user);
 });
 
 module.exports = router;
