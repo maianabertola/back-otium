@@ -18,13 +18,14 @@ router.get("/", async (req, res, next) => {
 
 router.post("/", async (req, res, next) => {
   try {
-    const { numberOfPeople, pet, message, userId, villaId } = req.body;
+    //enlevé temporairement le pet property
+    const { numberOfPeople, message, userId, villaId, bookedDates } = req.body;
     const newBook = await Booking.create({
       numberOfPeople,
-      pet,
       message,
       userId,
       villaId,
+      bookedDates,
     });
     res.status(201).json({
       message: "Villa booked",
@@ -53,24 +54,43 @@ router.delete("/:id", async (req, res, next) => {
   }
 });
 
-//testing the trip
-
-router.post("/trip", async (req, res, next) => {
+router.get("/created", async (req, res, next) => {
   try {
-    const { startDate, endDate, idVilla, idUser } = req.body;
-    const createTrip = await Trip.create({
-      startDate,
-      endDate,
-      idVilla,
-      idUser,
+    const getBookingsOfTheUser = await Booking.find({
+      userId: req.user_id,
+    }).sort({
+      bookedDates: -1,
     });
     res.status(201).json({
-      message: "Trip is created",
-      createTrip,
+      message: "this is the bookings made by the user",
+      Booking: getBookingsOfTheUser,
     });
   } catch (error) {
-    console.log(error, "there's an issue when creatingtrip, bookingPageroutes");
+    console.log(
+      "there is an error when getting the bookings made by the user in the bookingPage routes",
+      error
+    );
   }
 });
+// route.delete("/:id") -> récupérer l'iD
+
+//testing the trip
+// router.post("/trip", async (req, res, next) => {
+//   try {
+//     const { startDate, endDate, idVilla, idUser } = req.body;
+//     const createTrip = await Trip.create({
+//       startDate,
+//       endDate,
+//       idVilla,
+//       idUser,
+//     });
+//     res.status(201).json({
+//       message: "Trip is created",
+//       createTrip,
+//     });
+//   } catch (error) {
+//     console.log(error, "there's an issue when creatingtrip, bookingPageroutes");
+//   }
+// });
 
 module.exports = router;
