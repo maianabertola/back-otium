@@ -1,6 +1,5 @@
 const router = require("express").Router();
 const Booking = require("../models/Booking.model");
-const Trip = require("../models/Trip.model");
 
 //the prefix is /booking
 router.get("/", async (req, res, next) => {

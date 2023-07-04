@@ -3,8 +3,6 @@ require("../db/index");
 
 const Villa = require("../models/Villa.model");
 
-console.log("to delete");
-
 const villas = [
   {
     name: "Villa Monica",
@@ -36,9 +34,8 @@ const villas = [
       "https://cdn.lecollectionist.com/lc/production/uploads/photos/house-4283/2021-04-13-54f37a9ad46037a43b1ebef28ebb0cca.jpg?q=65&w=600&h=886",
       "https://cdn.lecollectionist.com/lc/production/uploads/photos/house-4283/2021-04-13-5731003a3ccc09077aa321d7bbf23d65.jpg?q=65&w=600&h=824",
     ],
-    tagline: "Unwind in Tuscany's scenic embrace",
-    slogan:
-      "Discover Tranquility and Luxury at our Exquisite Tuscan Villa - A Perfect Retreat for Unforgettable Moments",
+    tagline: "Tuscan Bliss, Ultimate Relaxation",
+    slogan: "Discover Tranquility and Luxury at our Exquisite Tuscan Villa",
     description:
       " Nestled amidst the breathtaking landscapes of Tuscany, our villa offers a sublime escape. Immerse yourself in timeless elegance and refined comforts, surrounded by rolling hills, vineyards, and olive groves. Indulge in the charm of the nearby villages, explore historical sites, savor local gastronomy, or simply unwind by the pool, soaking in the serenity. Experience the essence of Tuscan living at its finest.      .",
     idylicStatus: ["Family Moment", "Friends Trip"],
@@ -85,7 +82,7 @@ const villas = [
       "https://cdn.lecollectionist.com/lc/production/uploads/photos/house-4283/2021-04-13-54f37a9ad46037a43b1ebef28ebb0cca.jpg?q=65&w=600&h=886",
       "https://cdn.lecollectionist.com/lc/production/uploads/photos/house-4283/2021-04-13-5731003a3ccc09077aa321d7bbf23d65.jpg?q=65&w=600&h=824",
     ],
-    tagline: "Elegant Retreat in the Heart of Nice",
+    tagline: "Retreat in the Heart of Nice",
     slogan: "Experience Luxury and Sophistication in the Charming City of Nice",
     description:
       "Indulge in the opulence of Villa Florence, nestled in the heart of Nice. This exquisite villa offers luxurious accommodations, breathtaking views of the French Riviera, and easy access to the city's vibrant culture, stunning beaches, and renowned cuisine.",
@@ -134,7 +131,7 @@ const villas = [
       "https://cdn.lecollectionist.com/lc/production/uploads/photos/house-4283/2021-04-13-54f37a9ad46037a43b1ebef28ebb0cca.jpg?q=65&w=600&h=886",
       "https://cdn.lecollectionist.com/lc/production/uploads/photos/house-4283/2021-04-13-5731003a3ccc09077aa321d7bbf23d65.jpg?q=65&w=600&h=824",
     ],
-    tagline: "Seaside Bliss in Enchanting Cassis",
+    tagline: "Captivating Coastal Haven",
     slogan: "Escape to Villa Marguerite and Revel in the Beauty of Cassis",
     description:
       "Discover pure bliss at Villa Marguerite, a seaside retreat nestled in the enchanting town of Cassis. With its idyllic location, charming ambiance, and panoramic views of the Mediterranean Sea, this villa offers a perfect blend of relaxation, coastal adventures, and Provençal charm.",
@@ -370,14 +367,19 @@ const villas = [
       "https://cdn.lecollectionist.com/lc/production/uploads/photos/house-4283/2021-04-13-54f37a9ad46037a43b1ebef28ebb0cca.jpg?q=65&w=600&h=886",
       "https://cdn.lecollectionist.com/lc/production/uploads/photos/house-4283/2021-04-13-5731003a3ccc09077aa321d7bbf23d65.jpg?q=65&w=600&h=824",
     ],
-    tagline: "Breathtaking Luxury on the Amalfi Coast",
+    tagline: "Breathtaking, Luxurious holidays",
     slogan:
       "Experience Breathtaking Luxury at Villa Adamaria on the Amalfi Coast",
     description:
       "Unwind in the lap of luxury at Villa Adamaria, perched on the stunning Amalfi Coast. With its elegant design, panoramic terraces, and mesmerizing views of the Mediterranean Sea, this villa offers an unforgettable experience. Explore the charming coastal towns, savor delect.",
     idylicStatus: ["Family Moment", "Life Party"],
     petFriendly: true,
-    distinctiveFeatures: ["Lorem", "Lorem", "Lorem"],
+    distinctiveFeatures: [
+      "Breathtaking Amalfi Coast Views",
+      "Infinity Pool with Sea View",
+      "Stylish and Luxurious Interiors",
+      "Spacious Sun Terrace",
+    ],
     services: ["647cc042fe3aca1e35638691", "647cc042fe3aca1e35638690"],
     roomsDescriptions: [
       { room: "Room 1", description: "bed, tv, jacuzzi" },
