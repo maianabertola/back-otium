@@ -6,9 +6,11 @@ const serviceSchema = new Schema({
   },
   slogan: {
     type: String,
+    maxLength: 70,
   },
   description: {
     type: String,
+    maxLength: 450,
   },
 
   imageCover: {

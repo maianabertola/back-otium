@@ -1,5 +1,4 @@
 const router = require("express").Router();
-const Trip = require("../models/Trip.model");
 const User = require("../models/User.model");
 const Favorite = require("../models/Favorite.model");
 const Questionnaire = require("../models/Questionnaire.model");

@@ -9,7 +9,7 @@
     "seed:villa": "node ./bin/villa.seeds.js",
     "seed:user": "node ./bin/user.seeds.js",
     "seed:favorite": "node ./bin/favorite.seeds.js",
-    "seed:all": "npm run seed:service && npm run seed:villa && npm run seed:user && npm run seed:favorite"
+    "seed:all": "npm run seed:service && npm run seed:villa"
   },
   "dependencies": {
     "bcrypt": "^5.1.0",

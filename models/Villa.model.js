@@ -77,7 +77,7 @@ const villaSchema = new Schema({
   },
   description: {
     type: String,
-    maxLength: 380,
+    maxLength: 430,
     required: true,
   },
   idylicStatus: {
