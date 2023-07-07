@@ -47,8 +47,66 @@ const villas = [
     ],
     services: ["647cc042fe3aca1e35638690"],
     roomsDescriptions: [
-      { room: "Room 1", description: "bed, tv, jacuzzi" },
-      { room: "Room 2", description: "bed, tv, patio" },
+      {
+        room: "Master Suite",
+        description: [
+          "Opulent king-size bed with premium bedding",
+          "Elegant chaise lounge",
+          "Plush armchair and ottoman",
+          "Spacious walk-in closet",
+          "State-of-the-art entertainment system",
+        ],
+      },
+      {
+        room: "Gourmet Kitchen",
+        description: [
+          "Professional-grade oven and stove",
+          "Expansive Italian marble countertops",
+          "High-end stainless steel appliances",
+          "Large farmhouse sink",
+          "Custom-designed cabinetry",
+        ],
+      },
+      {
+        room: "Private Cinema",
+        description: [
+          "Plush reclining leather seats",
+          "State-of-the-art surround sound system",
+          "High-definition projector and screen",
+          "Custom-designed acoustic panels",
+          "Snack bar with built-in popcorn machine",
+        ],
+      },
+      {
+        room: "Luxurious Bathroom",
+        description: [
+          "Freestanding soaking tub",
+          "Walk-in rain shower",
+          "Double vanity with designer fixtures",
+          "Luxury bathrobes and towels",
+          "Premium bath products",
+        ],
+      },
+      {
+        room: "Elegant Guest Room",
+        description: [
+          "Comfortable queen-size bed",
+          "Cozy armchair",
+          "Writing desk and chair",
+          "Ample storage space",
+          "En-suite bathroom with modern fixtures",
+        ],
+      },
+      {
+        room: "Enchanting Garden",
+        description: [
+          "Charming outdoor seating area",
+          "Dining table for al fresco meals",
+          "Sun loungers for soaking up the sun",
+          "Tranquil water features",
+          "Manicured landscaping and garden paths",
+        ],
+      },
     ],
     address: "13 rue Keller - Paris",
   },
@@ -195,8 +253,66 @@ const villas = [
     ],
     services: ["647cc042fe3aca1e35638691", "647cc042fe3aca1e35638690"],
     roomsDescriptions: [
-      { room: "Room 1", description: "bed, tv, jacuzzi" },
-      { room: "Room 2", description: "bed, tv, patio" },
+      {
+        room: "Master Suite",
+        description: [
+          "Opulent king-size bed with premium bedding",
+          "Elegant chaise lounge",
+          "Plush armchair and ottoman",
+          "Spacious walk-in closet",
+          "State-of-the-art entertainment system",
+        ],
+      },
+      {
+        room: "Gourmet Kitchen",
+        description: [
+          "Professional-grade oven and stove",
+          "Expansive Italian marble countertops",
+          "High-end stainless steel appliances",
+          "Large farmhouse sink",
+          "Custom-designed cabinetry",
+        ],
+      },
+      {
+        room: "Private Cinema",
+        description: [
+          "Plush reclining leather seats",
+          "State-of-the-art surround sound system",
+          "High-definition projector and screen",
+          "Custom-designed acoustic panels",
+          "Snack bar with built-in popcorn machine",
+        ],
+      },
+      {
+        room: "Luxurious Bathroom",
+        description: [
+          "Freestanding soaking tub",
+          "Walk-in rain shower",
+          "Double vanity with designer fixtures",
+          "Luxury bathrobes and towels",
+          "Premium bath products",
+        ],
+      },
+      {
+        room: "Elegant Guest Room",
+        description: [
+          "Comfortable queen-size bed",
+          "Cozy armchair",
+          "Writing desk and chair",
+          "Ample storage space",
+          "En-suite bathroom with modern fixtures",
+        ],
+      },
+      {
+        room: "Enchanting Garden",
+        description: [
+          "Charming outdoor seating area",
+          "Dining table for al fresco meals",
+          "Sun loungers for soaking up the sun",
+          "Tranquil water features",
+          "Manicured landscaping and garden paths",
+        ],
+      },
     ],
     address: "13 rue Keller - Paris",
   },
@@ -244,8 +360,66 @@ const villas = [
     ],
     services: ["647cc042fe3aca1e35638691", "647cc042fe3aca1e35638690"],
     roomsDescriptions: [
-      { room: "Room 1", description: "bed, tv, jacuzzi" },
-      { room: "Room 2", description: "bed, tv, patio" },
+      {
+        room: "Master Suite",
+        description: [
+          "Opulent king-size bed with premium bedding",
+          "Elegant chaise lounge",
+          "Plush armchair and ottoman",
+          "Spacious walk-in closet",
+          "State-of-the-art entertainment system",
+        ],
+      },
+      {
+        room: "Gourmet Kitchen",
+        description: [
+          "Professional-grade oven and stove",
+          "Expansive Italian marble countertops",
+          "High-end stainless steel appliances",
+          "Large farmhouse sink",
+          "Custom-designed cabinetry",
+        ],
+      },
+      {
+        room: "Private Cinema",
+        description: [
+          "Plush reclining leather seats",
+          "State-of-the-art surround sound system",
+          "High-definition projector and screen",
+          "Custom-designed acoustic panels",
+          "Snack bar with built-in popcorn machine",
+        ],
+      },
+      {
+        room: "Luxurious Bathroom",
+        description: [
+          "Freestanding soaking tub",
+          "Walk-in rain shower",
+          "Double vanity with designer fixtures",
+          "Luxury bathrobes and towels",
+          "Premium bath products",
+        ],
+      },
+      {
+        room: "Elegant Guest Room",
+        description: [
+          "Comfortable queen-size bed",
+          "Cozy armchair",
+          "Writing desk and chair",
+          "Ample storage space",
+          "En-suite bathroom with modern fixtures",
+        ],
+      },
+      {
+        room: "Enchanting Garden",
+        description: [
+          "Charming outdoor seating area",
+          "Dining table for al fresco meals",
+          "Sun loungers for soaking up the sun",
+          "Tranquil water features",
+          "Manicured landscaping and garden paths",
+        ],
+      },
     ],
     address: "13 rue Keller - Paris",
   },
@@ -288,8 +462,66 @@ const villas = [
     distinctiveFeatures: ["Lorem", "Lorem", "Lorem"],
     services: ["647cc042fe3aca1e35638691", "647cc042fe3aca1e35638690"],
     roomsDescriptions: [
-      { room: "Room 1", description: "bed, tv, jacuzzi" },
-      { room: "Room 2", description: "bed, tv, patio" },
+      {
+        room: "Master Suite",
+        description: [
+          "Opulent king-size bed with premium bedding",
+          "Elegant chaise lounge",
+          "Plush armchair and ottoman",
+          "Spacious walk-in closet",
+          "State-of-the-art entertainment system",
+        ],
+      },
+      {
+        room: "Gourmet Kitchen",
+        description: [
+          "Professional-grade oven and stove",
+          "Expansive Italian marble countertops",
+          "High-end stainless steel appliances",
+          "Large farmhouse sink",
+          "Custom-designed cabinetry",
+        ],
+      },
+      {
+        room: "Private Cinema",
+        description: [
+          "Plush reclining leather seats",
+          "State-of-the-art surround sound system",
+          "High-definition projector and screen",
+          "Custom-designed acoustic panels",
+          "Snack bar with built-in popcorn machine",
+        ],
+      },
+      {
+        room: "Luxurious Bathroom",
+        description: [
+          "Freestanding soaking tub",
+          "Walk-in rain shower",
+          "Double vanity with designer fixtures",
+          "Luxury bathrobes and towels",
+          "Premium bath products",
+        ],
+      },
+      {
+        room: "Elegant Guest Room",
+        description: [
+          "Comfortable queen-size bed",
+          "Cozy armchair",
+          "Writing desk and chair",
+          "Ample storage space",
+          "En-suite bathroom with modern fixtures",
+        ],
+      },
+      {
+        room: "Enchanting Garden",
+        description: [
+          "Charming outdoor seating area",
+          "Dining table for al fresco meals",
+          "Sun loungers for soaking up the sun",
+          "Tranquil water features",
+          "Manicured landscaping and garden paths",
+        ],
+      },
     ],
     address: "13 rue Keller - Paris",
   },
@@ -332,8 +564,66 @@ const villas = [
     distinctiveFeatures: ["Lorem", "Lorem", "Lorem"],
     services: ["647cc042fe3aca1e35638691", "647cc042fe3aca1e35638690"],
     roomsDescriptions: [
-      { room: "Room 1", description: "bed, tv, jacuzzi" },
-      { room: "Room 2", description: "bed, tv, patio" },
+      {
+        room: "Master Suite",
+        description: [
+          "Opulent king-size bed with premium bedding",
+          "Elegant chaise lounge",
+          "Plush armchair and ottoman",
+          "Spacious walk-in closet",
+          "State-of-the-art entertainment system",
+        ],
+      },
+      {
+        room: "Gourmet Kitchen",
+        description: [
+          "Professional-grade oven and stove",
+          "Expansive Italian marble countertops",
+          "High-end stainless steel appliances",
+          "Large farmhouse sink",
+          "Custom-designed cabinetry",
+        ],
+      },
+      {
+        room: "Private Cinema",
+        description: [
+          "Plush reclining leather seats",
+          "State-of-the-art surround sound system",
+          "High-definition projector and screen",
+          "Custom-designed acoustic panels",
+          "Snack bar with built-in popcorn machine",
+        ],
+      },
+      {
+        room: "Luxurious Bathroom",
+        description: [
+          "Freestanding soaking tub",
+          "Walk-in rain shower",
+          "Double vanity with designer fixtures",
+          "Luxury bathrobes and towels",
+          "Premium bath products",
+        ],
+      },
+      {
+        room: "Elegant Guest Room",
+        description: [
+          "Comfortable queen-size bed",
+          "Cozy armchair",
+          "Writing desk and chair",
+          "Ample storage space",
+          "En-suite bathroom with modern fixtures",
+        ],
+      },
+      {
+        room: "Enchanting Garden",
+        description: [
+          "Charming outdoor seating area",
+          "Dining table for al fresco meals",
+          "Sun loungers for soaking up the sun",
+          "Tranquil water features",
+          "Manicured landscaping and garden paths",
+        ],
+      },
     ],
     address: "13 rue Keller - Paris",
   },
@@ -382,8 +672,66 @@ const villas = [
     ],
     services: ["647cc042fe3aca1e35638691", "647cc042fe3aca1e35638690"],
     roomsDescriptions: [
-      { room: "Room 1", description: "bed, tv, jacuzzi" },
-      { room: "Room 2", description: "bed, tv, patio" },
+      {
+        room: "Master Suite",
+        description: [
+          "Opulent king-size bed with premium bedding",
+          "Elegant chaise lounge",
+          "Plush armchair and ottoman",
+          "Spacious walk-in closet",
+          "State-of-the-art entertainment system",
+        ],
+      },
+      {
+        room: "Gourmet Kitchen",
+        description: [
+          "Professional-grade oven and stove",
+          "Expansive Italian marble countertops",
+          "High-end stainless steel appliances",
+          "Large farmhouse sink",
+          "Custom-designed cabinetry",
+        ],
+      },
+      {
+        room: "Private Cinema",
+        description: [
+          "Plush reclining leather seats",
+          "State-of-the-art surround sound system",
+          "High-definition projector and screen",
+          "Custom-designed acoustic panels",
+          "Snack bar with built-in popcorn machine",
+        ],
+      },
+      {
+        room: "Luxurious Bathroom",
+        description: [
+          "Freestanding soaking tub",
+          "Walk-in rain shower",
+          "Double vanity with designer fixtures",
+          "Luxury bathrobes and towels",
+          "Premium bath products",
+        ],
+      },
+      {
+        room: "Elegant Guest Room",
+        description: [
+          "Comfortable queen-size bed",
+          "Cozy armchair",
+          "Writing desk and chair",
+          "Ample storage space",
+          "En-suite bathroom with modern fixtures",
+        ],
+      },
+      {
+        room: "Enchanting Garden",
+        description: [
+          "Charming outdoor seating area",
+          "Dining table for al fresco meals",
+          "Sun loungers for soaking up the sun",
+          "Tranquil water features",
+          "Manicured landscaping and garden paths",
+        ],
+      },
     ],
     address: "13 rue Keller - Paris",
   },
