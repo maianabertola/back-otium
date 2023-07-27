@@ -17,13 +17,13 @@ router.get("/", async (req, res, next) => {
 
 router.post("/:id", async (req, res, next) => {
   try {
-    //enlevé temporairement le pet property
     const { id } = req.params;
-    const { numberOfPeople, message, userId, bookedDates } = req.body;
+    const { numberOfPeople, pet, message, userId, bookedDates } = req.body;
     const villaId = id; // Assign the id parameter as the villaId
 
     const newBook = await Booking.create({
       numberOfPeople,
+      pet,
       message,
       userId,
       villaId,

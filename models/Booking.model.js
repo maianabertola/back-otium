@@ -6,10 +6,10 @@ const bookingSchema = new Schema({
     required: true,
     min: 1,
   },
-  // pet: {
-  //   type: Boolean,
-  //   required: true,
-  // },
+  pet: {
+    type: Boolean,
+    required: true,
+  },
   message: {
     type: String,
     maxLength: 2000,

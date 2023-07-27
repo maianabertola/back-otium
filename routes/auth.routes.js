@@ -15,7 +15,6 @@ router.post("/signup", async (req, res, next) => {
     req.body;
 
   if (!name || !birthDate || !email || !password) {
-
     return res.status(400).json({ message: "missing informations" });
   }
   try {
@@ -60,7 +59,7 @@ router.post("/login", async (req, res, next) => {
     const payload = { _id: foundUser._id, email };
     const token = jwt.sign(payload, process.env.TOKEN_SECRET, {
       algorithm: "HS256",
-      expiresIn: "10d",
+      expiresIn: "30d",
     });
 
     res.status(201).json({ token });
