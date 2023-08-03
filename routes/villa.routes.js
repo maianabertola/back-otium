@@ -3,7 +3,7 @@ const Villa = require("../models/Villa.model");
 
 router.get("/", async (req, res, next) => {
   try {
-    const findAllVilla = await Villa.find();
+    const findAllVilla = await Villa.find().sort({ country: -1 });
     res.status(201).json({
       message: "this is all the villa",
       Villa: findAllVilla,

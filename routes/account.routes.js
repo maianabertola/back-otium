@@ -166,8 +166,3 @@ router.patch("/:id", async (req, res, next) => {
 });
 
 module.exports = router;
-
-// affiche delete les favorites
-// affiche delete les trips
-// affiche patch questionnaires
-// user get patch

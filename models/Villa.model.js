@@ -102,7 +102,7 @@ const villaSchema = new Schema({
     type: [
       {
         room: String,
-        description: String,
+        description: [String],
       },
     ],
     required: true,

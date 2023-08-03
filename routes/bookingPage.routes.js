@@ -82,7 +82,6 @@ router.delete("/:id", async (req, res, next) => {
 });
 
 // user can edit one booking
-
 router.patch("/:id", async (req, res, next) => {
   try {
     const { id } = req.params;

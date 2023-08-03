@@ -8,72 +8,90 @@ const services = [
     slogan: "Indulge in culinary excellence",
     description:
       "Discover a world of exquisite flavors and dining experiences with our talented private chefs. From personalized menus to tantalizing creations, let your taste buds embark on a journey of gastronomic delight.",
-    imageCover: "",
-    imageServicePage: "",
+    imageCover:
+      "https://res.cloudinary.com/dspbzkolr/image/upload/v1691049521/OTIUM/Services/ChefService_eagzlb.jpg",
+    imageServicePage:
+      "https://res.cloudinary.com/dspbzkolr/image/upload/v1691049517/OTIUM/Services/ChefService2_yxldf3.jpg",
   },
   {
     title: "Chauffeur",
     slogan: "Luxury rides at your command, redefine your travel experience",
     description:
-      "Sit back, relax, and let our professional chauffeurs transport you in style. Experience the epitome of luxury and convenience as you embark on a seamless journey. From airport transfers to personalized tours, our chauffeurs provide exceptional service, ensuring every moment of your travel is as extraordinary as your destination. Enjoy the comfort and elegance of our meticulously maintained fleet, and let us redefine your travel experience with unparalleled attention to detail.",
-    imageCover: "",
-    imageServicePage: "",
+      "Experience luxury and convenience with our professional chauffeurs. Embark on a seamless journey, from airport transfers to personalized tours. Our chauffeurs deliver exceptional service to make every travel moment extraordinary. Enjoy the comfort and elegance of our meticulously maintained fleet. Let us redefine your travel experiences with unmatched attention to detail. Sit back, relax, and let us take the wheel",
+    imageCover:
+      "https://res.cloudinary.com/dspbzkolr/image/upload/v1691049518/OTIUM/Services/ChauffeurCover_aalmwz.jpg",
+    imageServicePage:
+      "https://res.cloudinary.com/dspbzkolr/image/upload/v1691049518/OTIUM/Services/Chauffeur_q1jmb9.jpg",
   },
   {
     title: "Childcare",
     slogan: "Expert care for your little ones, peace of mind for you",
     description:
-      "Trust your children's well-being to our professional and caring nannies. With a focus on safety, engagement, and nurturing, our dedicated team ensures a joyful and secure environment for your little ones. From interactive playtime to educational activities, we provide personalized care tailored to the needs and interests of each child. Enjoy peace of mind knowing your children are in capable hands, allowing you to relax and fully enjoy your stay worry-free.",
-    imageCover: "",
-    imageServicePage: "",
+      "Entrust your children's well-being to our professional, caring nannies. Focused on safety, engagement, and nurturing, our team creates a joyful, secure environment. Offering interactive playtime and educational activities, we deliver personalized care tailored to your child's needs. Enjoy peace of mind knowing your little ones are in capable hands, allowing you to indulge in your stay without worry.",
+    imageCover:
+      "https://res.cloudinary.com/dspbzkolr/image/upload/v1691049517/OTIUM/Services/Childcare_iw7axv.jpg",
+    imageServicePage:
+      "https://res.cloudinary.com/dspbzkolr/image/upload/v1691049519/OTIUM/Services/ChildCare2_opwcjh.jpg",
   },
   {
     title: "Ultimate Spa",
     slogan: "Indulge in luxurious bliss, a sanctuary of rejuvenation",
     description:
-      "Immerse yourself in the epitome of relaxation and rejuvenation with our Ultimate Spa service. Our team of skilled professionals will pamper you with a range of exquisite treatments designed to revitalize your body, mind, and soul. From soothing massages to rejuvenating facials, from expert hairstyling to immaculate manicures and pedicures, we offer a comprehensive array of services. Experience ultimate bliss as you unwind in the comfort of your villa, surrounded by serene ambiance and indulgent luxury. Let us elevate your senses and leave you feeling refreshed, revitalized, and truly pampered.",
-    imageCover: "",
-    imageServicePage: "",
+      "Experience relaxation and rejuvenation with our Ultimate Spa service. Our skilled professionals pamper you with a variety of exquisite treatments, revitalizing body and soul. Enjoy soothing massages, rejuvenating facials, expert hairstyling, and immaculate manicures. Unwind in the comfort of your villa, immersed in a serene ambiance and luxurious indulgence. Let us refresh and revitalize your senses, offering a truly pampered experience.",
+    imageCover:
+      "https://res.cloudinary.com/dspbzkolr/image/upload/v1691049516/OTIUM/Services/SpaCover_as6c2k.jpg",
+    imageServicePage:
+      "https://res.cloudinary.com/dspbzkolr/image/upload/v1691049516/OTIUM/Services/Spa_lgjich.jpg",
   },
   {
     title: "Personal Stylist",
     slogan: "Style tailored to perfection, embrace your unique elegance",
     description:
-      "Let our expert personal stylists elevate your sense of style and redefine your wardrobe. With a keen eye for fashion and an understanding of your individual preferences, our stylists curate personalized looks that reflect your unique personality. From fashion consultations to tailored shopping experiences, embark on a transformative journey of elegance and sophistication. Whether it's for a special occasion or a complete wardrobe revamp, trust our stylists to guide you towards a new level of sartorial confidence. Embrace your unique elegance and step into a world of impeccable style.",
-    imageCover: "",
-    imageServicePage: "",
+      "Experience personalized fashion guidance with our expert personal stylists. With an understanding of your individual style, they curate personalized looks that enhance your uniqueness. Enjoy fashion consultations and tailored shopping experiences. Perfect for a special occasion or a complete wardrobe revamp, let our stylists guide you towards refined elegance and impeccable style.",
+    imageCover:
+      "https://res.cloudinary.com/dspbzkolr/image/upload/v1691049517/OTIUM/Services/SytlistCover_yfr8kr.jpg",
+    imageServicePage:
+      "https://res.cloudinary.com/dspbzkolr/image/upload/v1691049519/OTIUM/Services/Stylist_ztbpex.jpg",
   },
   {
     title: "Exclusive Excursions",
     slogan: "Explore beyond the ordinary, curated for extraordinary moments",
     description:
-      "Immerse yourself in a world of captivating discovery with our exclusive excursions. We curate unforgettable experiences that showcase the best of your destination, ensuring every moment is filled with awe and wonder. From private tours to hidden gems, we offer a range of carefully crafted itineraries that allow you to explore the culture, history, and natural beauty of your surroundings. Let us create moments of discovery that will leave you with cherished memories of your journey beyond the ordinary.",
-    imageCover: "",
-    imageServicePage: "",
+      "Dive into a world of captivating discovery with our exclusive excursions. Uncover the best of your destination through private tours and hidden gems. Our carefully crafted itineraries let you explore the culture, history, and natural beauty around you. We create extraordinary experiences that go beyond the ordinary, leaving you with cherished memories.",
+    imageCover:
+      "https://res.cloudinary.com/dspbzkolr/image/upload/v1691049521/OTIUM/Services/Excurison_ljenht.jpg",
+    imageServicePage:
+      "https://res.cloudinary.com/dspbzkolr/image/upload/v1691049520/OTIUM/Services/Excursion_myrbzn.jpg",
   },
   {
     title: "Sport Coach",
     slogan: "Unleash your athletic potential, elevate your fitness journey",
     description:
-      "Maximize your fitness goals and unleash your athletic potential with our skilled sport coaches. Whether you are a beginner or a seasoned athlete, our tailored programs and expert guidance will help you achieve optimal results. Experience exhilarating workouts, personalized training plans, and motivational support as you work towards your wellness goals. Let our coaches inspire you to push your limits, elevate your fitness journey, and embrace a healthier, more active lifestyle.",
-    imageCover: "",
-    imageServicePage: "",
+      "Boost your fitness journey with our skilled sport coaches. Catering to all fitness levels, our personalized programs help you achieve optimal results. Get exhilarating workouts and expert guidance towards your wellness goals. Our coaches inspire you to elevate your fitness journey, promoting a healthier, more active lifestyle.",
+    imageCover:
+      "https://res.cloudinary.com/dspbzkolr/image/upload/v1691049522/OTIUM/Services/SportCover_umtpvg.jpg",
+    imageServicePage:
+      "https://res.cloudinary.com/dspbzkolr/image/upload/v1691049517/OTIUM/Services/Sport_ejqaml.jpg",
   },
   {
     title: "Event Planner",
     slogan: "Unforgettable moments, flawlessly orchestrated",
     description:
-      "From intimate gatherings to grand celebrations, entrust our talented event planners to create unforgettable moments for any occasion. With meticulous attention to detail and seamless coordination, we'll bring your vision to life, surpassing your expectations. From venue selection to decor, catering, and entertainment, our experienced team will craft a bespoke event tailored to your preferences. Let us handle every aspect of the planning process, ensuring your event is a resounding success.",
-    imageCover: "",
-    imageServicePage: "",
+      "From intimate gatherings to grand events, trust our planners to create unforgettable moments. We attend to every detail, bringing your vision to life with seamless coordination. Our team crafts bespoke events, handling venue selection, decor, catering, and more, for a successful occasion.",
+    imageCover:
+      "https://res.cloudinary.com/dspbzkolr/image/upload/v1691049521/OTIUM/Services/EventCover_zmpwzy.jpg",
+    imageServicePage:
+      "https://res.cloudinary.com/dspbzkolr/image/upload/v1691049516/OTIUM/Services/Event_v7rqy6.jpg",
   },
   {
     title: "Yachting",
     slogan: "Sail into luxury, an unforgettable voyage awaits",
     description:
-      "Embark on a breathtaking yachting experience and indulge in the ultimate luxury at sea. Our meticulously curated selection of stunning vessels offers the perfect setting for an unforgettable voyage. From picturesque coastlines to secluded coves, explore the world's most captivating destinations from a unique perspective. With personalized itineraries and attentive crew, we ensure an unparalleled yachting experience. Let us elevate your journey, creating memories that will last a lifetime.",
-    imageCover: "",
-    imageServicePage: "",
+      "Embark on a breathtaking yachting adventure with ultimate sea luxury. Explore picturesque coastlines and secluded coves from stunning vessels with personalized itineraries. Our attentive crew ensures an unparalleled yachting experience, creating lasting memories.",
+    imageCover:
+      "https://res.cloudinary.com/dspbzkolr/image/upload/v1691049520/OTIUM/Services/Yachting_owxuhn.jpg",
+    imageServicePage:
+      "https://res.cloudinary.com/dspbzkolr/image/upload/v1691049520/OTIUM/Services/Yachting2_lonzqt.jpg",
   },
 ];
 
@@ -84,8 +102,7 @@ async function seed() {
     console.log("create all services", services);
     process.exit();
   } catch (e) {
-    next(e);
-    console.log("there is an error service seed");
+    console.log("there is an error with the service seed", e);
   }
 }
 
