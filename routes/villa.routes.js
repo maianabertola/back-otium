@@ -29,13 +29,11 @@ router.patch("/:id", async (req, res, next) => {
   try {
     const { id } = req.params;
     const { bookedDates } = req.body;
-    console.log("req body", req.body);
     const patchedVilla = await Villa.findByIdAndUpdate(
       id,
       { $push: { bookedDates } },
       { new: true }
     );
-    console.log("patched villa", patchedVilla);
     res.status(200).json({
       message: "we updated the booked dates of the villa",
       patchedVilla,

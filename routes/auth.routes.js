@@ -10,9 +10,19 @@ router.get("/user", async (req, res, next) => {
   const findUser = await User.find();
   res.json(findUser);
 });
+
+//route for the user to sign up
 router.post("/signup", async (req, res, next) => {
-  const { name, birthDate, email, phoneNumber, address, country, password } =
-    req.body;
+  const {
+    name,
+    surname,
+    birthDate,
+    email,
+    phoneNumber,
+    address,
+    country,
+    password,
+  } = req.body;
 
   if (!name || !birthDate || !email || !password) {
     return res.status(400).json({ message: "missing informations" });
@@ -27,6 +37,7 @@ router.post("/signup", async (req, res, next) => {
 
     const newUser = {
       name,
+      surname,
       birthDate,
       email,
       phoneNumber,
@@ -41,6 +52,7 @@ router.post("/signup", async (req, res, next) => {
   }
 });
 
+//route for the user to login
 router.post("/login", async (req, res, next) => {
   try {
     const { email, password } = req.body;
@@ -68,6 +80,7 @@ router.post("/login", async (req, res, next) => {
   }
 });
 
+//route to check if the user is authenticated
 router.get("/verify", isAuthenticated, async (req, res, next) => {
   res.json(req.user);
 });

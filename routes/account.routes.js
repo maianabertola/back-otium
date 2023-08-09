@@ -3,18 +3,21 @@ const User = require("../models/User.model");
 const Favorite = require("../models/Favorite.model");
 const Questionnaire = require("../models/Questionnaire.model");
 
+//THE PREFIX IS /account
+//route to find all the favorite villas
 router.get("/", async (req, res, next) => {
   try {
     const allFavorite = await Favorite.find();
-    res
-      .status(201)
-      .json({ message: "this is all your favorite", Favorite: allFavorite });
+    res.status(201).json({
+      message: "this is all your favorite villas",
+      Favorite: allFavorite,
+    });
   } catch (e) {
-    next(e);
-    console.log("there is a get error");
+    console.log("there is an error when retrieving all the favorite villas", e);
   }
 });
 
+//route to create a new favorite
 router.post("/", async (req, res, next) => {
   try {
     const { idUser, idVilla } = req.body;
@@ -24,60 +27,24 @@ router.post("/", async (req, res, next) => {
       Favorite: newFavorite,
     });
   } catch (e) {
-    next(e);
-    console.log("there is a post error");
+    console.log("there is an error when fav a villa", e);
   }
 });
 
+//route to delete a favorite villa
 router.delete("/:id", async (req, res, next) => {
   try {
-    const deletedFavoite = await Favorite.findByIdAndDelete(req.params.id);
-    if (!deletedFavoite) {
+    const deletedFavorite = await Favorite.findByIdAndDelete(req.params.id);
+    if (!deletedFavorite) {
       return res.json({ message: "there is no favorite to delete" });
     }
     res.status(201).json({ message: "the favorite is deleted" });
   } catch (e) {
-    next(e);
-    console.log("there is a delete error");
+    console.log("there is an error when deleting the favorite villa", e);
   }
 });
 
-router.get("/", async (req, res, next) => {
-  try {
-    const allTrips = await Trip.find();
-    res.status(201).json({ message: "this is all your trips", Trip: allTrips });
-  } catch (e) {
-    next(e);
-    console.log("there is a get error");
-  }
-});
-
-router.delete("/:id", async (req, res, next) => {
-  try {
-    const deletedTrip = await Trip.findByIdAndDelete(req.params.id);
-    if (!deletedTrip) {
-      return res.json({ message: "there is no trip to delete" });
-    }
-    res.status(201).json({ message: "the trip is deleted" });
-  } catch (e) {
-    next(e);
-    console.log("there is a delete error");
-  }
-});
-
-router.get("/", async (req, res, next) => {
-  try {
-    const allQuestionnaires = await Questionnaire.find();
-    res.status(201).json({
-      message: "this is all your questionnaire",
-      Questionnaire: allQuestionnaires,
-    });
-  } catch (e) {
-    next(e);
-    console.log("there is a get error");
-  }
-});
-
+//Route to delete a questionnaire from the user account
 router.delete("/", async (req, res, next) => {
   try {
     const deletedQuestionnaire = await Questionnaire.findByIdAndDelete(
@@ -88,12 +55,12 @@ router.delete("/", async (req, res, next) => {
     }
     res.status(201).json({ message: "the questionnaire is deleted" });
   } catch (e) {
-    next(e);
-    console.log("there is a delete error");
+    console.log("there is an error when deleting a questionnaire", e);
   }
 });
 
-router.patch("/:id", async (req, res, next) => {
+//Route to patch the questionnaire from the user account
+router.patch("/:id", async (req, res) => {
   try {
     const { id } = req.params;
     const {
@@ -131,37 +98,51 @@ router.patch("/:id", async (req, res, next) => {
       Questionnaire: updateQuestionnaire,
     });
   } catch (e) {
-    next(e);
-    console.log("there is a patch error");
+    console.log("there is an error when patching a questionnaire", e);
   }
 });
 
-router.get("/", async (req, res, next) => {
+//Route to patch the info of the user
+router.patch("/user/:id", async (req, res) => {
   try {
-    const allUser = await User.find();
-    res.status(201).json({ message: "there is all the user", User: allUser });
-  } catch (e) {
-    next(e);
-    console.log("there is a get error");
-  }
-});
-
-router.patch("/:id", async (req, res, next) => {
-  try {
+    console.log("Attempting to patch user");
     const { id } = req.params;
-    const { name, birthDate, email, phoneNumber, address, password } = req.body;
-    const updateUser = await User.findByIdAndUpdate(
+    const { name, surname, birthDate, email, phoneNumber, address, country } =
+      req.body;
+    console.log("req body", req.body);
+    console.log(
+      "values",
+      name,
+      surname,
+      birthDate,
+      email,
+      phoneNumber,
+      address,
+      country
+    );
+    console.log("id", id);
+
+    const updatedUser = await User.findByIdAndUpdate(
       id,
-      { name, birthDate, email, phoneNumber, address, password },
+      {
+        $set: {
+          name,
+          surname,
+          birthDate,
+          email,
+          phoneNumber,
+          address,
+          country,
+        },
+      },
       { new: true }
     );
     res.status(201).json({
-      message: "the user is updated",
-      User: updateUser,
+      message: "the user has been updated",
+      User: updatedUser,
     });
   } catch (e) {
-    next(e);
-    console.log("there is a patch error");
+    console.log("there is an error when patchin user info", e);
   }
 });
 
