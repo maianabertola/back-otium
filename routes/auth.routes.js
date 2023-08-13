@@ -80,7 +80,7 @@ router.post("/login", async (req, res, next) => {
   }
 });
 
-//route to check if the user is authenticated
+//route to check if the user exists when trying to log in
 router.get("/verify", isAuthenticated, async (req, res, next) => {
   res.json(req.user);
 });
