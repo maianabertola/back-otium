@@ -11,7 +11,7 @@ const cookieParser = require("cookie-parser");
 
 // ℹ️ Needed to accept from requests from 'the outside'. CORS stands for cross origin resource sharing
 // unless the request if from the same domain, by default express wont accept POST requests
-const cors = require("cors");
+// const cors = require("cors");
 
 const FRONTEND_URL = process.env.ORIGIN || "https://otium.netlify.app/";
 console.log("Loaded Origin:", FRONTEND_URL);
@@ -23,21 +23,21 @@ module.exports = (app) => {
   app.set("trust proxy", 1);
 
   //Explicit CORS Headers
-  app.use((req, res, next) => {
-    res.header("Access-Control-Allow-Origin", "https://otium.netlify.app/");
-    res.header(
-      "Access-Control-Allow-Headers",
-      "Origin, X-Requested-With, Content-Type, Accept, Authorization"
-    );
-    next();
-  });
+  // app.use((req, res, next) => {
+  //   res.header("Access-Control-Allow-Origin", "https://otium.netlify.app/");
+  //   res.header(
+  //     "Access-Control-Allow-Headers",
+  //     "Origin, X-Requested-With, Content-Type, Accept, Authorization"
+  //   );
+  //   next();
+  // });
 
-  // controls a very specific header to pass headers from the frontend
-  app.use(
-    cors({
-      origin: process.env.FRONTEND_URL,
-      credentials: true,
-    })
+  // // controls a very specific header to pass headers from the frontend
+  // app.use(
+  //   cors({
+  //     origin: process.env.FRONTEND_URL,
+  //     credentials: true,
+  //   })
   );
   // In development environment the app logs
   app.use(logger("dev"));
