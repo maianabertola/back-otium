@@ -24,11 +24,9 @@ const questionnaire = require("./routes/questionnairePage.routes");
 const booking = require("./routes/bookingPage.routes");
 const isAuthenticated = require("./middleware/middlewares");
 const account = require("./routes/account.routes");
-
 const signup = require("./routes/signupPage.routes");
 
 app.use("/api", indexRoutes);
-
 app.use("/signup", signup);
 app.use("/villa", villa);
 app.use("/service", services);
