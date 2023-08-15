@@ -38,7 +38,7 @@ module.exports = (app) => {
   //     origin: process.env.FRONTEND_URL,
   //     credentials: true,
   //   })
-  );
+  // );
   // In development environment the app logs
   app.use(logger("dev"));
 
