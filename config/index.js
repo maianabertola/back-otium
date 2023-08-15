@@ -14,6 +14,7 @@ const cookieParser = require("cookie-parser");
 const cors = require("cors");
 
 const FRONTEND_URL = process.env.ORIGIN || "https://otium.netlify.app/";
+console.log("Loaded Origin:", FRONTEND_URL);
 
 // Middleware configuration
 module.exports = (app) => {
@@ -24,7 +25,7 @@ module.exports = (app) => {
   // controls a very specific header to pass headers from the frontend
   app.use(
     cors({
-      origin: ["http://localhost:5173", process.env.ORIGIN],
+      origin: ["https://otium.netlify.app/", process.env.ORIGIN],
     })
   );
 
