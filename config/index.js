@@ -13,8 +13,8 @@ const cookieParser = require("cookie-parser");
 // unless the request if from the same domain, by default express wont accept POST requests
 const cors = require("cors");
 
-const FRONTEND_URL = process.env.ORIGIN;
-console.log("Loaded Origin:", FRONTEND_URL);
+// const FRONTEND_URL = process.env.ORIGIN;
+// console.log("Loaded Origin:", FRONTEND_URL);
 
 // Middleware configuration
 module.exports = (app) => {
@@ -22,19 +22,9 @@ module.exports = (app) => {
   // Services like heroku use something called a proxy and you need to add this to your server
   app.set("trust proxy", 1);
 
-  //Explicit CORS Headers
-  // app.use((req, res, next) => {
-  //   res.header("Access-Control-Allow-Origin", "https://otium.netlify.app");
-  //   res.header(
-  //     "Access-Control-Allow-Headers",
-  //     "Origin, X-Requested-With, Content-Type, Accept, Authorization"
-  //   );
-  //   next();
-  // });
-
   // // controls a very specific header to pass headers from the frontend
-  // app.use(cors({ origin: "https://otium.netlify.app", credentials: true }));
-  app.use(cors({ origin: "http://localhost:5173/", credentials: true }));
+  // app.use(cors({ origin: process.env.ORIGIN, credentials: true }));
+  app.use(cors({ origin: "*", credentials: true }));
 
   // In development environment the app logs
   app.use(logger("dev"));
