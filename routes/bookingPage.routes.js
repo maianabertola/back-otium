@@ -52,10 +52,7 @@ router.get("/created", async (req, res, next) => {
         bookedDates: -1,
       })
       .populate("villaId");
-    res.status(201).json({
-      message: "this is the bookings made by the user",
-      Booking: getBookingsOfTheUser,
-    });
+    res.status(201).json(getBookingsOfTheUser);
   } catch (error) {
     console.log(
       "there is an error when getting the bookings made by the user in the bookingPage routes",

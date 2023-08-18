@@ -3,11 +3,10 @@ const Questionnaire = require("../models/Questionnaire.model");
 
 router.get("/", async (req, res, next) => {
   try {
-    const findAllQuestionnaire = await Questionnaire.find().sort({createdAt: -1});
-    res.status(201).json({
-      message: "this is all questionnaires",
-      findAllQuestionnaire,
+    const findAllQuestionnaire = await Questionnaire.find().sort({
+      createdAt: -1,
     });
+    res.status(201).json(findAllQuestionnaire);
   } catch (e) {
     next(e);
     console.log("there is a get error");
